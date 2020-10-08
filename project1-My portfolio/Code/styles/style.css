@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -7,94 +8,122 @@ body {
   padding: 0;
   font-family: "Raleway", sans-serif;
 }
-h1,
-h2,
-i,
-p {
-  display: inline;
-}
+
 header {
   background-image: url("../images/1.png");
   background-size: cover;
+  background-position: center;
   color: white;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .flex-container {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
 .header-items,
 .icons-container {
   text-align: center;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .icons-container {
   padding: 0;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
+
+.icons-container i {
+  font-size: 2.5rem;
+}
+
 .header-items {
   padding: 3rem 4rem;
   max-width: 40vw;
   min-width: 300px;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border: 1rem solid white;
 }
-i {
-  font-size: 2.5rem;
-}
+
 /* ------------------ nav --------------------- */
 nav {
   position: fixed;
-
-  background-image: url("../images/royal-blue-gradient-transparent2.png");
-  background-repeat: repeat-x;
-
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#143953), to(rgba(255, 0, 0, 0)));
+  background-image: linear-gradient(#143953, rgba(255, 0, 0, 0));
   width: 100vw;
-  padding-bottom: 100px;
 }
+
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-nav li {
+nav ul li {
   float: left;
 }
 
-nav li a {
+nav ul li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 1rem 1.2rem;
   text-decoration: none;
 }
 
-nav li a:hover {
-  /* background-image: url("https://static.wixstatic.com/media/be1848_067c0f842b5840f092a7956b6de531ba~mv2.png/v1/fill/w_560,h_278,al_c,q_85,usm_0.66_1.00_0.01/blue-gradient-wide.webp"); */
-  /* background-repeat: repeat-x; */
-  /* background-size: cover; */
-  background-color: blue;
+nav ul li a:hover {
+  background-color: #4981a9;
 }
+
+@media only screen and (max-width: 600px) {
+  nav ul li a {
+    padding: 1rem 0.8rem;
+  }
+}
+
 /* ----------------------------------------- */
-section {
-}
 .grid-container {
   width: 80vw;
   margin: auto;
   padding: 2rem 0;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: auto auto;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
 }
-span {
+
+.grid-container h2 {
+  color: #1c4d70;
+}
+
+.grid-container span {
   font-weight: 300;
 }
-.my-img {
+
+.grid-container .my-img {
   border-radius: 50%;
   width: 200px;
 }
@@ -105,6 +134,39 @@ span {
   }
 }
 
+@media only screen and (min-width: 600px) {
+  .grid-container article {
+    margin-left: 2rem;
+  }
+}
+
+/* ------------------------- */
+section h2 {
+  color: #1c4d70;
+}
+
+.grid-article {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+}
+
+.grid-article .date {
+  margin-right: 10rem;
+  border-right: 2px #1c4d70 solid;
+}
+
+@media only screen and (max-width: 600px) {
+  .grid-article {
+    display: block;
+  }
+  .grid-article .date {
+    margin-right: 0rem;
+    border-right: none;
+  }
+}
+
 /* ------------- footer --------------- */
 footer {
   text-align: center;
@@ -112,18 +174,4 @@ footer {
   color: white;
   padding: 3rem 0;
 }
-
-/* ------------------------- */
-
-.EXPERIENCE {
-}
-.grid-article {
-  display: grid;
-  grid-template-columns: auto auto;
-}
-
-@media only screen and (max-width: 600px) {
-  .grid-article {
-    display: block;
-  }
-}
+/*# sourceMappingURL=style.css.map */

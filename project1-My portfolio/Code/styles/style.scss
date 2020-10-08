@@ -1,0 +1,167 @@
+$main-color: #143953;
+$h2-color: #1c4d70;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+header {
+  background-image: url("../images/1.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.flex-container {
+  display: inline-flex;
+}
+
+.header-items,
+.icons-container {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.icons-container {
+  padding: 0;
+  justify-content: space-around;
+  i {
+    font-size: 2.5rem;
+  }
+}
+.header-items {
+  padding: 3rem 4rem;
+  max-width: 40vw;
+  min-width: 300px;
+  flex-direction: column;
+  border: 1rem solid white;
+}
+
+/* ------------------ nav --------------------- */
+nav {
+  position: fixed;
+
+  background-image: linear-gradient($main-color, rgba(255, 0, 0, 0));
+
+  width: 100vw;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      float: left;
+
+      a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 1rem 1.2rem;
+        text-decoration: none;
+
+        &:hover {
+          background-color: #4981a9;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  nav {
+    ul {
+      li {
+        a {
+          padding: 1rem 0.8rem;
+        }
+      }
+    }
+  }
+}
+/* ----------------------------------------- */
+
+.grid-container {
+  width: 80vw;
+  margin: auto;
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: auto auto;
+
+  h2 {
+    color: $h2-color;
+  }
+
+  span {
+    font-weight: 300;
+  }
+
+  .my-img {
+    border-radius: 50%;
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .grid-container {
+    display: block;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .grid-container article {
+    margin-left: 2rem;
+  }
+}
+
+/* ------------------------- */
+section {
+  h2 {
+    color: $h2-color;
+  }
+}
+
+.grid-article {
+  display: grid;
+  grid-template-columns: auto auto;
+
+  .date {
+    margin-right: 10rem;
+
+    border-right: 2px $h2-color solid;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
+    ul {
+      li {
+        a {
+        }
+      }
+    }
+  }
+  .grid-article {
+    display: block;
+    .date {
+      margin-right: 0rem;
+
+      border-right: none;
+    }
+  }
+}
+
+/* ------------- footer --------------- */
+footer {
+  text-align: center;
+  background-color: $main-color;
+  color: white;
+  padding: 3rem 0;
+}
