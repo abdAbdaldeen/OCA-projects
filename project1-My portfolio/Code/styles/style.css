@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+}
+h1,
+h2,
+i,
+p {
+  display: inline;
+}
+header {
+  background-image: url("../images/1.png");
+  background-size: cover;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.flex-container {
+  display: inline-flex;
+}
+
+.header-items,
+.icons-container {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.icons-container {
+  padding: 0;
+  justify-content: space-around;
+}
+.header-items {
+  padding: 3rem 4rem;
+  max-width: 40vw;
+  min-width: 300px;
+  flex-direction: column;
+  border: 1rem solid white;
+}
+i {
+  font-size: 2.5rem;
+}
+/* ------------------ nav --------------------- */
+nav {
+  position: fixed;
+
+  background-image: url("../images/royal-blue-gradient-transparent2.png");
+  background-repeat: repeat-x;
+
+  width: 100vw;
+  padding-bottom: 100px;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  /* background-image: url("https://static.wixstatic.com/media/be1848_067c0f842b5840f092a7956b6de531ba~mv2.png/v1/fill/w_560,h_278,al_c,q_85,usm_0.66_1.00_0.01/blue-gradient-wide.webp"); */
+  /* background-repeat: repeat-x; */
+  /* background-size: cover; */
+  background-color: blue;
+}
+/* ----------------------------------------- */
+section {
+}
+.grid-container {
+  width: 80vw;
+  margin: auto;
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+span {
+  font-weight: 300;
+}
+.my-img {
+  border-radius: 50%;
+  width: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+  .grid-container {
+    display: block;
+  }
+}
+
+/* ------------- footer --------------- */
+footer {
+  text-align: center;
+  background-color: #143953;
+  color: white;
+  padding: 3rem 0;
+}
+
+/* ------------------------- */
+
+.EXPERIENCE {
+}
+.grid-article {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .grid-article {
+    display: block;
+  }
+}
