@@ -92,10 +92,14 @@ nav ul li a {
   text-align: center;
   padding: 1rem 1.2rem;
   text-decoration: none;
+  color: #306c99;
+  -webkit-transition: color 1s, font-size 1s;
+  transition: color 1s, font-size 1s;
 }
 
 nav ul li a:hover {
-  background-color: #4981a9;
+  font-size: 20px;
+  color: white;
 }
 
 @media only screen and (max-width: 600px) {
@@ -126,11 +130,16 @@ nav ul li a:hover {
 .grid-container .my-img {
   border-radius: 50%;
   width: 200px;
+  margin: auto;
+  display: block;
 }
 
 @media only screen and (max-width: 600px) {
   .grid-container {
     display: block;
+    width: 80vw;
+    margin: auto;
+    text-align: center;
   }
 }
 
@@ -148,13 +157,14 @@ section h2 {
 .grid-article {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
+  -ms-grid-columns: 1fr 1fr 3fr;
+      grid-template-columns: 1fr 1fr 3fr;
 }
 
-.grid-article .date {
-  margin-right: 10rem;
-  border-right: 2px #1c4d70 solid;
+.grid-article .vr {
+  padding: 3px;
+  height: 100%;
+  border-left: 2px #143953 solid;
 }
 
 @media only screen and (max-width: 600px) {
@@ -167,8 +177,153 @@ section h2 {
   }
 }
 
+/* ------------- skils --------------- */
+#skilsH {
+  color: #1c4d70;
+  text-align: center;
+}
+
+.skils {
+  width: 80vw;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 1.5rem;
+          column-gap: 1.5rem;
+}
+
+.skils .container {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.skils .container .skills {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  padding-right: 0.5rem;
+}
+
+.skils .container .html {
+  width: 90%;
+  background-color: #e85d25;
+}
+
+.skils .container .css {
+  width: 90%;
+  background-color: #249cda;
+}
+
+.skils .container .sass {
+  width: 85%;
+  background-color: #be5f8b;
+}
+
+.skils .container .bootstrap {
+  width: 80%;
+  background-color: #5e2ca7;
+}
+
+.skils .container .js {
+  width: 60%;
+  background-color: #efd81d;
+}
+
+.skils .container .php {
+  width: 60%;
+  background-color: #4d588e;
+}
+
+.skils .container .flutter {
+  width: 70%;
+  background-color: #53c5f9;
+}
+
+.skils .container .git {
+  width: 75%;
+  background-color: #e84c33;
+}
+
+@media only screen and (max-width: 600px) {
+  .skils {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.pro-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 2rem 5rem;
+  width: 95vw;
+  margin: auto;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  width: 80%;
+  margin: auto;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-item-align: start;
+      align-self: start;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  width: 90vw;
+  font-size: 20px;
+}
+
+.card .container {
+  padding: 2px 16px;
+}
+
+.card img {
+  width: 20%;
+}
+
+@media only screen and (max-width: 800px) {
+  .card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .card img {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .card img {
+    width: 100%;
+  }
+}
+
 /* ------------- footer --------------- */
 footer {
+  margin-top: 2rem;
   text-align: center;
   background-color: #143953;
   color: white;
