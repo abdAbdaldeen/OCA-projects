@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/myimg_C9E_1.ico" />
     <script
       src="https://kit.fontawesome.com/7fbcf8a158.js"
       crossorigin="anonymous"
@@ -16,14 +17,7 @@
     />
   </head>
   <body id="home">
-    <nav>
-      <ul>
-        <li><a class="active" href="#home">HOME</a></li>
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="pages/pProjects.html#projects">PROJECTS</a></li>
-        <li><a href="pages/pContact.html#contact">CONTACT</a></li>
-      </ul>
-    </nav>
+  
     <header>
       <div class="flex-container header-items">
         <h1 class="item">Abdel rahman Abdaldeen</h1>
@@ -41,9 +35,17 @@
         </div>
       </div>
     </header>
-
+    <nav id="navbar">
+      <ul>
+        <li id="nav-img"><img src="images/myimg.jpg" alt="my img"></li>
+        <li><a class="active" href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
     <section class="grid-container" id="about">
-      <img src="images/myImg.jpg" alt="my-img" class="my-img" />
+      <img src="images/myImgLB.png" alt="my-img" class="my-img" />
 
       <article class="inline">
         <h2 style="text-align: center">ABOUT ME</h2>
@@ -53,8 +55,7 @@
           Web & Mobile developer.</span
         >
         <p>
-          I come with extensive experience & knowledge in the IT field bringing
-          my highly valued set of skills. I am problems-solver,
+          I am problems-solver,
           results-oriented, analytical and critical thinker who adept at
           resolving complex issues and addresses issues quickly and exceeds
           performance standards consistently. I have self-learning abilities,
@@ -171,6 +172,324 @@
         </div>
       </div>
     </div>
+ <!-- --------------------- projects ------------------------ -->
+ <section id="projects" style="padding: 2rem 0">
+  <h2 class="pro-h2">RECENT PROJECTS</h2>
+  <p class="note">*Note: These are all tasks that I completed during The Complete Flutter Development Bootcamp with Dart. </p>
+ <div class="pro-grid-container">
+  <!-- ---------------------------- -->
+<div class="flip-card" onclick="flip(0)">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img class="card-img" src="images/todoey.gif" alt="todoey_demo" />
+    </div>
+    <div class="flip-card-back">
+        <h4><b>Todoey ✓</b></h4>
+        <p>
+          Todolist app to keep track of all your tasks.
+          <br />
+          <br />
+          <b>What I learned:</b>
+        </p>
+        <ul>
+          <li>Understand what is state and why we need to manage it.</li>
+          <li>
+            Understand the difference between ephemeral (local) state and
+            app state.
+          </li>
+          <li>See the problems with simply relying on setState().</li>
+          <li>Learn about the concept of Prop Drilling.</li>
+          <li>
+            Examine various popular ways of managing app state for Flutter
+            projects.
+          </li>
+          <li>Learn about the List Builder.</li>
+          <li>Use the Flutter BottomSheet Widget.</li>
+          <li>
+            Learn to lift state up to be able to access it from children
+            widgets.
+          </li>
+          <li>Learn about design patterns and why they are useful.</li>
+          <li>
+            Understand how the Provider package works and use it to manage
+            app state.
+          </li>
+        </ul>
+        <!-- <a href="#"
+          ><img
+            class="github-icon"
+            src="images/github.png"
+            alt="github icon"
+        /></a> -->
+    </div>
+  </div>
+</div>
+  <!-- ---------------------------- -->
+  <div class="flip-card" onclick="flip(1)">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img
+        class="card-img"
+        src="images/flash_chat_flutter_demo.gif"
+        alt="flash_chat_demo"
+      />
+      </div>
+      <div class="flip-card-back">
+        <h4><b>Flash Chat ⚡️</b></h4>
+        <p>
+          modern messaging app where users can sign up and log in to chat.
+          <br />
+          <br />
+          <b>What I learned:</b>
+        </p>
+        <ul>
+          <li>How to incorporate Firebase into my Flutter projects.</li>
+          <li>
+            How to use Firebase authentication to register and sign in
+            users.
+          </li>
+          <li>
+            How to create beautiful animations using the Flutter Hero
+            widget.
+          </li>
+          <li>
+            How to create custom aniamtions using Flutter's animation
+            controller.
+          </li>
+          <li>
+            Learn all about mixins and how they differ from superclasses.
+          </li>
+          <li>Learn about Streams and how they work.</li>
+          <li>Learn to use ListViews to build scrolling views.</li>
+          <li>
+            How to use Firebase Cloud Firestore to store and retrieve data
+            on the fly.
+          </li>
+        </ul>
+          <!-- <a href="#"
+            ><img
+              class="github-icon"
+              src="images/github.png"
+              alt="github icon"
+          /></a> -->
+      </div>
+    </div>
+  </div>
+    <!-- ------------bitcoin---------------- -->
+<div class="flip-card" onclick="flip(2)">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img
+      class="card-img"
+      src="images/bitcoin-flutter-demo.gif"
+      alt="bitcoin-flutter-demo"
+    />
+    </div>
+    <div class="flip-card-back">
+      <h4><b>Bitcoin Ticker 🤑</b></h4>
+      <p>
+        Crypto currency price checking app.
+        <br />
+        <br />
+        <b>What I learned:</b>
+      </p>
+      <ul>
+        <li>
+          How to use the DropdownButton Widget from Material design.
+        </li>
+        <li>How to loop through code using Dart for and for-in loops.</li>
+        <li>How to use Cupertino Widgets in your app.</li>
+        <li>
+          How to check the platform your app is being run on to customise
+          the UI for that platform.
+        </li>
+        <li>Revise previous concepts by completing the challenges.</li>
+      </ul>
+        <!-- <a href="#"
+          ><img
+            class="github-icon"
+            src="images/github.png"
+            alt="github icon"
+        /></a> -->
+    </div>
+  </div>
+</div>
+  <!-- -------------clima--------------- -->
+  <div class="flip-card" onclick="flip(3)">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img
+        class="card-img"
+        src="images/clima-demo.gif"
+        alt="clima_demo"
+      />
+      </div>
+      <div class="flip-card-back">
+        <h4><b>Clima ☁</b></h4>
+        <p>
+          weather app inspired by the beautiful designs made by
+          <a href="https://dribbble.com/shots/4663154-">Olia Gozha</a> .
+          <br />
+          <br />
+          <b>What I learned:</b>
+        </p>
+        <ul>
+          <li>How to use Dart to perform asynchronous tasks.</li>
+          <li>Understand async and await.</li>
+          <li>Learn about Futures and how to work with them.</li>
+          <li>How to network with the Dart http package.</li>
+          <li>
+            What APIs are and how to use them to get data from the internet.
+          </li>
+          <li>
+            What JSONs are and how to parse them using the Dart convert
+            package.
+          </li>
+          <li>
+            How to pass data forwards and backwards between screens using
+            the Navigator.
+          </li>
+          <li>How to handle exceptions in Dart using try/catch/throw.</li>
+          <li>
+            Learn about the lifecycle of Stateful Widgets and how to
+            override them.
+          </li>
+          <li>
+            How to use the Geolocator package to get live location data for
+            both iOS and Android.
+          </li>
+          <li>How to use the TextField Widget to take user input.</li>
+        </ul>
+          <!-- <a href="#"
+            ><img
+              class="github-icon"
+              src="images/github.png"
+              alt="github icon"
+          /></a> -->
+      </div>
+    </div>
+  </div>
+  <!-- -------------bmi-calc--------------- -->
+  <div class="flip-card" onclick="flip(4)">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img
+        class="card-img"
+        src="images/bmi-calc-demo.gif"
+        alt="bmi-calc_demo"
+      />
+      </div>
+      <div class="flip-card-back">
+        <h4><b>BMI Calculator 💪</b></h4>
+        <p>
+          Body Mass Index Calculator inspired by the beautiful designs made
+          by
+          <a href="https://dribbble.com/shots/4585382-Simple-BMI-Calculator"
+            >Ruben Vaalt</a
+          >.
+          <br />
+          <br />
+          <b>What I learned:</b>
+        </p>
+        <ul>
+          <li>How to use Flutter themes to create coherent branding.</li>
+          <li>
+            How to create multi-page apps using Flutter Routes and
+            Navigator.
+          </li>
+          <li>
+            How to extract and refactor Flutter Widgets with a click of the
+            button.
+          </li>
+          <li>How to pass functions as parameters and fields.</li>
+          <li>
+            How to use the GestureDetector Widget to detect more than just a
+            tap.
+          </li>
+          <li>How to use custom colour palettes by using hex codes.</li>
+          <li>
+            How to customise Flutter Widgets to achieve a specific design
+            style.
+          </li>
+          <li>Understand Dart Enums and the Ternary Operator.</li>
+          <li>
+            Learn about composition vs. inheritance and the Flutter way of
+            creating custom UI.
+          </li>
+          <li>
+            Understand the difference between const and final in Dart and
+            when to use each.
+          </li>
+        </ul>
+          <!-- <a href="#"
+            ><img
+              class="github-icon"
+              src="images/github.png"
+              alt="github icon"
+          /></a> -->
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+ </section>
+    <!-- --------------------- contact ------------------------ -->
+    <section style="width: 80vw; margin: auto; padding: 2rem 0;" id="contact">
+      <h2 class="pro-h2">CONTACT</h2>
+      <p>
+        Interested in working together? Fill out the form below with some info
+        about your project and I will get back to you as soon as I can. Please
+        allow a couple days for me to respond.
+      </p>
+      <form action="">
+        <div class="form-group">
+          <label for="">*Name</label><br />
+          <input class="f-input" type="text" placeholder="&#xf508" />
+        </div>
+        <div class="form-group">
+          <label for="">*Email</label><br />
+          <input class="f-input" type="email" placeholder="&#xf0e0" />
+        </div>
+        <div class="form-group">
+          <label for="">Website</label><br />
+          <input class="f-input" type="url" placeholder="&#xf0c1" />
+        </div>
+        <div class="form-group">
+          <label for="">Budget</label><br />
+          <input class="f-input" type="number" placeholder="&#xf155" />
+        </div>
+        <div class="form-group">
+          <label for="">Timeline</label><br />
+          <input class="f-input" type="text" placeholder="&#xf073" />
+        </div>
+        <div class="form-group">
+          <label for="">*1+2=</label><br />
+          <input class="f-input" type="number" placeholder="&#xf0eb" />
+        </div>
+        <div>
+          <label for="">Tell me a little about your project:</label>
+          <textarea cols="30" rows="10"></textarea>
+        </div>
+
+        <input id="submit" type="submit" value="submit" />
+      </form>
+
+      <!-- ------------------------ -->
+    </section>
+      <section class="con-social">
+          <div>
+          <p>
+            <i class="fas fa-at"></i> abd.abdaldeen@gmail.com
+          </p>
+          <p>
+            <i class="fas fa-phone-square-alt"></i> +962778870784
+          </p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Amman,Jordan
+          </p>
+        </div>
+      </section>
+
 
     <!-- --------------------- footer ------------------------ -->
     <footer>
@@ -186,9 +505,48 @@
         ></a>
       </div>
       <p>
-        © Copyright 2020 <br />
-        All rights reseved. Powered by <b>Abdel rahman Abdaldeen</b>
+        © Copyright 2020 All rights reseved.<br />Powered by <b>Abdel rahman Abdaldeen</b>
       </p>
     </footer>
+<!-- --------------script---------------- -->
+    <script>
+var about = document.getElementById("about");
+var projects = document.getElementById("projects");
+var contact = document.getElementById("contact");
+
+      window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  console.log("sticky = "+sticky);
+  console.log("window.pageYOffset = "+window.pageYOffset);
+
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky");
+  } else {
+    navbar.classList.remove("sticky");
+  }
+
+}
+      // ------------------------------
+      let isflip = new Array();
+      for (let i = 0; i < 5; i++) {
+        isflip[i]=false;
+      }
+      var FCInner = document.getElementsByClassName("flip-card-inner");
+      function flip(x) {
+      if(isflip[x]){
+        FCInner[x].style.transform = "rotateY(0deg)";
+       isflip[x] = false;
+      }
+      else{
+        FCInner[x].style.transform = "rotateY(180deg)";
+       isflip[x] = true;
+      }
+         
+      }
+      </script>
   </body>
 </html>
