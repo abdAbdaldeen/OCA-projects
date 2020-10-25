@@ -1,3 +1,4 @@
+//------------------ nav toggle ---------------------
 $(function () {
     $(".toggle").on("click", function () {
       if ($(".item").hasClass("active")) {
@@ -8,12 +9,11 @@ $(function () {
     });
   });
 // ===================
-console.log(localStorage.length);
 if(!localStorage.length){
 localStorage.setItem("id",0);
 }
+
 $("#signIn").click(function(){
-    // alert("clicked");
    let n=$("#lname").val();
    let p=$("#lpwd").val();
    if(document.getElementById('lcheckbox').checked) {
@@ -23,12 +23,10 @@ $("#signIn").click(function(){
       sessionStorage.setItem("n",n);
       sessionStorage.setItem("pa",p);
   }
-  // alert("clicked");
 
   });
 
   $("#signUp").click(function(){
-    // alert("clicked");
     let e=$("#semail").val();
     let pa=$("#spwd").val();
     let n=$("#sname").val();
@@ -47,7 +45,6 @@ $("#signIn").click(function(){
       sessionStorage.setItem("d",d);
       sessionStorage.setItem("ph",ph);
     }
-    // alert("clicked");
   });
 
   // =====================================================
@@ -57,6 +54,7 @@ $("#signIn").click(function(){
 
 
 // -------------------------------------
+//s => sign up ---- l => login , sign in
 function sAgreeCheckbox() {
 var button= document.getElementById("signUp");
 var checkBox = document.getElementById("sagree");

@@ -11,7 +11,7 @@ solve = () => {
     var pos = x.search("^");
     let f =parseFloat(x.slice(0,pos-1));
     let s =parseFloat(x.slice(pos+2));
-    console.log(f,s,x.slice(pos+2));
+    // console.log(f,s,x.slice(pos+2));
   answer = Math.pow(f,s);
 }
 document.getElementById("result").value = answer;

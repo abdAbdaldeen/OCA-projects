@@ -1,3 +1,4 @@
+// print name in h1
 let name= localStorage.getItem('n');
 if (name==null){
     name= sessionStorage.getItem('n');
@@ -14,19 +15,21 @@ else{
 }
 // -------------------------------------
 
+// return obj of all in localStorage
 function getallLocal() {
     var obj = Object.keys(localStorage).reduce(function(obj, key) {
         obj[key] = localStorage.getItem(key);
-        return obj
+        return obj;
     }, {});
     return obj;
 }
+
 function show() {
     $("#localTable tbody").html("");
     let allLocal = getallLocal();
-    
+    // console.log(allLocal);
     for (x in allLocal) {
-        if(x !="n" && x !="u"&& x !="ph"&& x !="d"&& x !="pa" && x != "id"){
+        if(x !="n" && x !="e" && x !="ph"&& x !="d"&& x !="pa" && x != "id"){
         let json=allLocal[x];
         let obj= JSON.parse(json);
             if(!obj.isDone){
@@ -45,9 +48,11 @@ function show() {
     }
 
     $("tbody tr").click(function(){
+        console.log(this);
             let id = $(this).attr("id");
             let json= localStorage.getItem(id);
             let obj= JSON.parse(json);
+            //اول كبسة بحط خط
             if(!obj.isDone){
             obj.isDone=true;
             localStorage.setItem(id, JSON.stringify(obj));
@@ -59,7 +64,7 @@ function show() {
             show(); 
         }
         });
-        //to removeItem
+
 }
 // ----------------------------------
 
@@ -82,7 +87,7 @@ function clearr() {
         let allLocal = getallLocal();
     
     for (x in allLocal) {
-        if(x !="n" && x !="u"&& x !="ph"&& x !="d"&& x !="pa" && x != "id"){
+        if(x !="n" && x !="e"&& x !="ph"&& x !="d"&& x !="pa" && x != "id"){
             localStorage.removeItem(x);
         }
     }

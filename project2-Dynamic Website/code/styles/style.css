@@ -226,7 +226,7 @@ nav .menu li a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: url(/imgs/imgBk3.jpg);
+  background: url(../imgs/imgbk3.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
