@@ -1,0 +1,96 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do list organizer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body id="To-do-body">
+    <nav>
+      <ul class="menu">
+        <li class="logo"><a><span style="color: teal;">T</span>odoye</a></li>
+        <li class="item"><a href="index.html">Home</a></li>
+        <li class="item"><a href="p3.html">Calculator</a></li>
+        <li class="item button"  ><a id="sign-out-btn" href="index.html">sign out</a></li>
+        <li class="toggle">
+          <span class="bars"></span>
+        </li>
+      </ul>
+    </nav>
+    <!-- header ============================ -->
+    <header id="todoHeader">
+      <div class="content">
+        <!-- Add User Name After Todoye -->
+        <h1 id="welcomeAndName">Welcome To Todoye </h1>
+        <h2>Are You Ready To Accomplish Some Missions! </h2>
+      </div>
+    </header>
+    <!-- /* ---------------------------------------------- */ -->
+    <section>
+    <div id="todo-cont">
+    <form action="#todo-cont" class="form-todo">
+      <div  class="fc-cont">
+        <input type="text" placeholder="What To Do" id="value" class="inputs todo-inp"/>
+        <input type="number" maxlength="2" placeholder="HH" id="h" class="inputs" />
+        <input type="number" maxlength="2" placeholder="MM" id="m" class="inputs" />
+      </div>
+      <br>
+        
+        <br>
+        <div class="sc-cont">
+        <div id="bColorDiv">
+        <label for="bcolor">Choose The Background Color <br><br>
+        <input type="color" class="colorBiker" id="bcolor" value="#008080" /></label>
+      </div>
+        <div class="tColorDiv">
+        <label for="tcolor">Choose The Text Color<br><br>
+        <input type="color" class="colorBiker" id="tcolor" value="#000000" /></label>
+      </div>
+    </div>
+        <br>
+        
+        <br>
+        <button class="todo-btn" onclick="localSubmit()">
+          Add
+        </button>
+        <input type="reset" class="todo-btn" value="Clear" onclick="clearr()" />
+      
+
+    </form>
+      <h2>Your Missions</h2>
+      <p>*Note: first click to check your task, second click to remove it.</p>
+
+    <div class="todo-container">
+      <table id="localTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>task</th>
+            <th>time</th>
+          </tr>
+        </thead>
+        <tbody class="todo-list todo"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>
+    © Copyright 2020 All rights reseved.<br />Powered by
+    <b>A.T.W. Team</b>
+  </p>
+</footer>
+    <script src="script/toDo.js"></script>
+  </body>
+</html>

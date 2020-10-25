@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todoye Calculator</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+</head>
+    <body>
+      <nav>
+        <ul class="menu">
+          <li class="logo"><a><span style="color: teal;">T</span>odoye</a></li>
+          <li class="item"><a href="index.html">Home</a></li>
+          <li class="item"><a href="p2.html">To-Do</a></li>
+
+          <!-- <li class="item button"><a href="#">sign in</a></li>
+          <li class="item button secondary">
+            <a href="#" id="signUpBtn">Sign up</a>
+          </li> -->
+          <li class="toggle">
+            <span class="bars"></span>
+          </li>
+        </ul>
+      </nav>
+      <div>
+            <!-- ---------- ball -------------- -->
+            <div >
+                <input type="checkbox" class="checkbox" id="chk" />
+                <label class="label" for="chk">
+                    <div class="ball"></div>
+                </label>
+              </div>
+              <!-- ---------- calc -------------- -->
+            <div class="calcContainer">
+            <div class="output"><input class="one" type="text" id="result" name="result" placeholder="0" disabled/></div>
+
+
+              <div class="btnWrapper">
+                <button class="but opr ac" type="button" value="AC" onclick="clr()">AC</button>
+                    <button  class="Del but opr" type="button" value="DEL" onclick="calculate('c')">DEL</button>
+                    <button class="but opr" id="divide" type="button" value="/" onclick=" dis('/')" >&divide;</button>
+                    <button class="but opr" type="button" value="*" onclick="dis('*')">*</button>
+                    <button class="but number" type="button" value="7" onclick="dis('7')">7</button>
+                    <button class="but number" type="button" value="8" onclick="dis('8')">8</button>
+                    <button class="but number" type="button" value="9" onclick="dis('9')">9</button>
+                    <button class="but opr" type="button" value="-" onclick="dis('-')">-</button>
+                    <button class="but opr" type="button" value="+" onclick="dis('+')">+</button>
+                    <button class="but number" type="button" value="4" onclick="dis('4')">4</button>
+                    <button class="but number" type="button" value="5" onclick="dis('5')">5</button>
+                    <button class="but number" type="button" value="6" onclick="dis('6')">6</button>
+                    <button class="but opr" type="button" value="." onclick="dis('.')">.</button>
+                    <button class="but opr" type="button" value="'result'^2" onclick="disPow()">x<sup>y</sup></button>
+                    <button class="but number" type="button" value="1" onclick="dis('1')">1</button>
+                    <button class="but number" type="button" value="2" onclick="dis('2')">2</button>
+                    <button class="but number" type="button" value="3" onclick="dis('3')">3</button>
+                    <button class="but opr" type="button" value="(-)" onclick="doMath()">(-)</button>
+                    
+                    <button class="but opr" type="button" value="(x!)" onclick="factorial()">x!</button>
+                    
+                    <button class="but opr zero" type="button" value="0" onclick="dis('0')">0</button>
+                    <button class="but Del opr equal" class="assig" type="button" value="=" onclick="solve()">=</button>
+            </div>
+        </div>
+      </div>
+      
+        <!-- --------------------- footer ------------------------ -->
+    <footer>
+      <p>
+        © Copyright 2020 All rights reseved.<br/>Powered by
+        <b>Abdel rahman Abdaldeen</b>
+      </p>
+    </footer>
+       
+        
+        <script src="script/calcu.2.js"></script>
+        <script src="script/script.js"></script>
+        
+        
+    
+
+
+    </body>
+
+</html>
