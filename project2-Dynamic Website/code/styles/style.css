@@ -482,6 +482,7 @@ footer {
   cursor: pointer;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  outline: none;
 }
 
 #todo-cont .todo-btn:hover {
