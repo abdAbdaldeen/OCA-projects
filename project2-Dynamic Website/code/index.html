@@ -40,13 +40,17 @@
 <div id="form-cont" class="form-container">
 <div id="sign-up">
   <h2>Create An Account</h2>
-  <form action="p2.html">
+   <form ><!--action="p2.html" -->
     <div class="form-group">
       <label for="name">Name:</label>
       <input type="text" class="form-control" id="sname" placeholder="Enter name" required>
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
+      <div id="alertE" class="alert alert-danger alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>It must contain:</strong> @ and .
+      </div>
       <input type="email" onchange="checkEmail()" class="form-control" id="semail" placeholder="Enter email" required>
     </div>
     
@@ -56,38 +60,52 @@
     </div>
     <div class="form-group">
       <label for="phone">Phone Number:</label>
-      <input type="tel" class="form-control" maxlength="10" onkeyup="checkPhone()" id="sphone" placeholder="Enter phone number" required>
+      <div id="alertPh" class="alert alert-danger alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>It must consist:</strong>of ten digits
+      </div>
+      <input type="number" class="form-control" maxlength="10" onchange="checkPhone()" id="sphone" placeholder="Enter phone number" required>
     </div>
 
     <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="spwd" placeholder="Enter password" required>
+      <label for="pwd" >Password:</label>
+      <div id="alertPaS" class="alert alert-danger alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>It must contain:</strong>
+        a minimum of 1 lower case letter [a-z], 1 upper case letter [A-Z], 1 numeric character [0-9], 1 special character
+      </div>
+      <input type="password" class="form-control" id="spwd" onchange="checkPassword('s')"  placeholder="Enter password" required>
     </div>
     <div class="form-group form-check">
       <label class="form-check-label">
         <input class="form-check-input" id="sagree" type="checkbox" onchange="sAgreeCheckbox()" > I agree to Store this form
       </label>
     </div>
+    <b id></b>
     <div class="form-group form-check">
       <label class="form-check-label">
         <input class="form-check-input" id="scheckbox" type="checkbox" > Remember me
       </label>
     </div>
-     <button type="submit" id="signUp" disabled class="btn btn-info">Sign up</button>
   </form>
+  <button type="submit" id="signUp" disabled class="btn btn-info">Sign up</button>
 </div>
 
 
 <div id="sign-in">
   <h2>Already have an account just sign in</h2>
-  <form action="p2.html">
+  <form >
     <div class="form-group">
       <label for="name">Name:</label>
       <input type="text" class="form-control" id="lname" placeholder="Enter name" required>
     </div>
     <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="lpwd" placeholder="Enter password" required>
+      <label for="pwd" >Password:</label>
+      <div id="alertPaL" class="alert alert-danger alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>It must contain:</strong>
+        a minimum of 1 lower case letter [a-z], 1 upper case letter [A-Z], 1 numeric character [0-9], 1 special character      </div>
+      <input type="password" class="form-control" id="lpwd" onchange="checkPassword('l')" placeholder="Enter password" required>
     </div>
     <div class="form-group form-check">
       <label class="form-check-label">
@@ -100,8 +118,8 @@
       </label>
     </div>
    
-     <button type="submit" id="signIn" disabled class="btn btn-info">Sign in</button>
   </form>
+  <button id="signIn" disabled class="btn btn-info">Sign in</button>
 </div>
 </div>
 
