@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="description" content="Full stack developer in progress">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
@@ -15,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body id="home">
   
@@ -35,14 +37,18 @@
         </div>
       </div>
     </header>
+    
     <nav id="navbar">
+      
       <ul>
-        <li id="nav-img"><img src="images/myimg_fuA_icon.ico" alt="my img"></li>
-        <li><a class="active" href="#home">HOME</a></li>
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#projects">PROJECTS</a></li>
-        <li><a href="#contact">CONTACT</a></li>
+        <i id="x"  class="far fa-times-circle item"></i>
+        <li id="nav-img"><img  src="images/myimg_fuA_icon.ico" alt="my img"></li>
+        <li class="item"><a class="active" href="#home">HOME</a></li>
+        <li class="item"><a href="#about">ABOUT</a></li>
+        <li class="item"><a href="#projects">PROJECTS</a></li>
+        <li class="item"><a href="#contact">CONTACT</a></li>
       </ul>
+      <i id="hamburgerMenu" class="fas fa-bars"></i>
     </nav>
     <section class="grid-container" id="about">
       <img src="images/myimgLB.ico" alt="my-img" class="my-img" />
@@ -113,70 +119,74 @@
     </section>
     <div style="padding: 4rem"></div>
     <!-- -------------------------- skils ---------------------------- -->
-    <h2 id="skilsH"><i class="fas fa-code"></i> Skils</h2>
-    <div class="skils">
+    <h2 id="skillsH"><i class="fas fa-code"></i> Skills</h2>
+    <div class="skills">
       <!-- -------------------------- -->
-      <div>
-        <p>HTML <i class="fab fa-html5"></i></p>
-        <div class="container">
-          <div class="skills html">90%</div>
-        </div>
-      </div>
-      <!-- -------------------------- -->
-      <div>
-        <p>CSS <i class="fab fa-css3-alt"></i></p>
-        <div class="container">
-          <div class="skills css">90%</div>
-        </div>
-      </div>
-      <!-- -------------------------- -->
-      <div>
-        <p>SASS <i class="fab fa-sass"></i></p>
-        <div class="container">
-          <div class="skills sass">85%</div>
-        </div>
-      </div>
-      <!-- -------------------------- -->
-      <div>
-        <p>Bootstrap 4 <i class="fab fa-bootstrap"></i></p>
-        <div class="container">
-          <div class="skills bootstrap">80%</div>
-        </div>
-      </div>
-      <!-- -------------------------- -->
-      <div>
-        <p>JavaScript <i class="fab fa-js"></i></p>
-        <div class="container">
-          <div class="skills js">60%</div>
-        </div>
-      </div>
-      <!-- -------------------------- -->
-      <div>
-        <p>PHP <i class="fab fa-php"></i></p>
-        <div class="container">
-          <div class="skills php">60%</div>
-        </div>
-      </div>
-      <!-- -------------------------- -->
-      <div>
-        <p>Flutter <img src="images/flutter.png" alt="" width="13px" /></p>
-        <div class="container">
-          <div class="skills flutter">70%</div>
-        </div>
-      </div>
-      <!-- -------------------------- -->
-      <div>
-        <p>GIT <i class="fab fa-git-alt"></i></p>
-        <div class="container">
-          <div class="skills git">75%</div>
-        </div>
-      </div>
+          <div class="skill html"><p>HTML <i class="fab fa-html5"></i></p></div>
+          <div class="skill css"><p>CSS <i class="fab fa-css3-alt"></i></p></div>
+          <div class="skill sass"><p>SASS <i class="fab fa-sass"></i></p>
+          </div>
+          <div class="skill bootstrap">        <p>Bootstrap 4 <i class="fab fa-bootstrap"></i></p>
+          </div>
+          <div class="skill js">        <p>JavaScript <i class="fab fa-js"></i></p>
+          </div>
+          
+          <div class="skill wordpress">        <p>Wordpress <i class="fab fa-wordpress"></i></p>
+          </div>
+          <div class="skill flutter">        <p>Flutter <img src="images/iconfinder_flutter_4691465-min.png" alt="" width="13px" /></p>
+          </div>
+          <div class="skill git">        <p>GIT <i class="fab fa-git-alt"></i></p>
+          </div>
+
+    
     </div>
  <!-- --------------------- projects ------------------------ -->
  <section id="projects" style="padding: 2rem 0">
   <h2 class="pro-h2">RECENT PROJECTS</h2>
-  <p class="note">*Note: These are all tasks that I completed during The Complete Flutter Development Bootcamp with Dart. </p>
- <div class="pro-grid-container">
+ <div class="pro-buttons">
+   <!-- <button>HTML - CSS</button> -->
+   <button class="active html" onclick="proTabs('pro-html-card','html')">HTML - CSS - JS</button>
+   <button class="wordpress" onclick="proTabs('pro-Wordpress-card','wordpress')">Wordpress</button>
+   <button class="flutter"  onclick="proTabs('pro-flutter-container','flutter')">flutter</button>
+</div>
+ 
+ <!-- -----------------HTML - CSS - JS-projects -------------------- -->
+ <div class="pro-html-card show">
+   <img src="images/js-pro-min.png" alt="">
+   <div class="card-body">
+     <h4>Todoy</h4>
+     <p>This is our second project in Orange Coding Academy, a Dynamic Website using HTML5 , CSS3 , SASS , bootstrap 4 , JS , Jquery . <br>
+      Its a To-do website, it has To-Do List that storage in local storage and Calculator.<br><br>
+      It was my first experience working with a team and it was a great experience.<br><br>
+      Done with my amazing team <a href="https://www.linkedin.com/in/waed-dawaghreh98/">Waed Dawaghreh</a> <a href="https://www.linkedin.com/in/taima%E2%80%99-al-fokaha%E2%80%99/">Taima’ Al-fokaha’</a>
+    </p>
+    <a href="https://abdabdaldeen.github.io/OCA-projects/project2-Dynamic%20Website/code/index.html">
+      <img src="images/github-min.png" alt="github">
+    </a>
+    
+   </div>
+ </div>
+ <!-- -----------------Wordpress-projects -------------------- -->
+ <div class="pro-Wordpress-card">
+  <img src="images/Wordpress-pro-min.png" alt="">
+  <div class="card-body">
+    <h4>A.A Organic Store</h4>
+    <p>
+      This is my third project in Orange Coding Academy, a ecommerce multilingual website using the WordPress.<br>
+      I built it using woocommerce.<br>
+      Emphasis was placed on several points, including seo, security, speed and responsive.
+
+   </p>
+   <a href="https://dev-aa-organic-store.pantheonsite.io/">
+    <img style="height: 3.5rem; width: auto;" src="images/browser-min.png" alt="">
+  </a>
+   
+  </div>
+</div>
+ <!-- -----------------flutter-projects -------------------- -->
+  <div class="pro-flutter-container">
+    <p class="note">*Note: These are all tasks that I completed during The Complete Flutter Development Bootcamp with Dart. </p>
+
   <!-- ---------------------------- -->
 <div class="flip-card" onclick="flip(0)">
   <div class="flip-card-inner">
@@ -375,7 +385,7 @@
       <div class="flip-card-front">
         <img
         class="card-img"
-        src="images/bmi-calc-demo.gif"
+        src="images/bmi-calc-demo (2).gif"
         alt="bmi-calc_demo"
       />
       </div>
@@ -431,7 +441,7 @@
     </div>
   </div>
 </div>
-</div>
+
  </section>
     <!-- --------------------- contact ------------------------ -->
     <section style="width: 80vw; margin: auto; padding: 2rem 0;" id="contact">
@@ -509,44 +519,6 @@
       </p>
     </footer>
 <!-- --------------script---------------- -->
-    <script>
-var about = document.getElementById("about");
-var projects = document.getElementById("projects");
-var contact = document.getElementById("contact");
-
-      window.onscroll = function() {myFunction()};
-
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-  console.log("sticky = "+sticky);
-  console.log("window.pageYOffset = "+window.pageYOffset);
-
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky");
-  } else {
-    navbar.classList.remove("sticky");
-  }
-
-}
-      // ------------------------------
-      let isflip = new Array();
-      for (let i = 0; i < 5; i++) {
-        isflip[i]=false;
-      }
-      var FCInner = document.getElementsByClassName("flip-card-inner");
-      function flip(x) {
-      if(isflip[x]){
-        FCInner[x].style.transform = "rotateY(0deg)";
-       isflip[x] = false;
-      }
-      else{
-        FCInner[x].style.transform = "rotateY(180deg)";
-       isflip[x] = true;
-      }
-         
-      }
-      </script>
+<script src="scripts/script.js"></script>
   </body>
 </html>

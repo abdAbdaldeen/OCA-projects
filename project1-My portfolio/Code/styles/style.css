@@ -95,50 +95,108 @@ header {
 
 nav {
   background-color: rgba(15, 48, 87, 0.95);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10fr 1fr;
+      grid-template-columns: 10fr 1fr;
+  -webkit-transition: 3s;
+  transition: 3s;
 }
 
-nav ul {
+.cBurgerMenu {
+  -ms-grid-columns: 1fr !important;
+      grid-template-columns: 1fr !important;
+  background-color: rgba(15, 48, 87, 0.8) !important;
+  height: 100vh;
+  width: 100vw;
+}
+
+.cBurgerMenu ul {
+  text-align: center;
   list-style-type: none;
+  padding-left: 0;
   margin: 0;
-  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-nav ul li a {
+.cBurgerMenu ul li {
+  padding-top: 5vh;
+}
+
+.cBurgerMenu ul li a {
+  font-size: 2em;
+  font-weight: bold;
   display: block;
-  text-align: center;
-  padding: 1rem 1.2rem;
-  text-decoration: none;
-  color: #008891;
-  -webkit-transition: color 0.5s, font-size 0.5s;
-  transition: color 0.5s, font-size 0.5s;
-}
-
-nav ul li a:hover {
-  font-size: 1.25em;
   color: white;
+  text-decoration: none;
 }
 
-nav ul #nav-img {
-  padding-left: 1em;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  height: 2em;
-}
-
-nav ul #nav-img img {
-  height: 100%;
-  border-radius: 50%;
+.cBurgerMenu #x {
+  height: 1em;
+  text-align: right;
 }
 
 @media only screen and (max-width: 600px) {
+  nav {
+    padding: 6px 0;
+  }
+  nav i {
+    display: inline;
+    margin: 1rem;
+    color: #008891;
+  }
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+  }
   nav ul li a {
-    padding: 1rem 0.8rem;
+    display: none;
+  }
+}
+
+@media (min-width: 601px) {
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  nav ul li a {
+    display: block;
+    text-align: center;
+    padding: 1rem 1.2rem;
+    text-decoration: none;
+    color: #008891;
+    -webkit-transition: color 0.5s, font-size 0.5s;
+    transition: color 0.5s, font-size 0.5s;
+  }
+  nav ul li a:hover {
+    font-size: 1.25em;
+    color: white;
+  }
+  nav ul #nav-img {
+    padding-left: 1em;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    height: 2em;
+  }
+  nav ul #nav-img img {
+    height: 100%;
+    border-radius: 50%;
+  }
+  nav i {
+    display: none !important;
   }
 }
 
@@ -216,90 +274,159 @@ section h2 {
 }
 
 /* ------------- skils --------------- */
-#skilsH {
+#skillsH {
   color: #00587a;
   text-align: center;
 }
 
-.skils {
+.skills {
   width: 80vw;
   margin: auto;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -webkit-column-gap: 1.5rem;
-          column-gap: 1.5rem;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.skils .container {
-  width: 100%;
-  background-color: #ddd;
-}
-
-.skils .container .skills {
-  text-align: right;
-  padding-top: 0.625em;
-  padding-bottom: 0.625em;
-  color: white;
-  padding-right: 0.5rem;
-}
-
-.skils .container .html {
-  width: 90%;
+.skills .html {
   background-color: #e85d25;
 }
 
-.skils .container .css {
-  width: 90%;
+.skills .skill {
+  text-align: center;
+  padding-top: 0.625em;
+  padding-bottom: 0.625em;
+  color: white;
+}
+
+.skills .skill p {
+  color: white;
+}
+
+.skills .css {
   background-color: #249cda;
 }
 
-.skils .container .sass {
-  width: 85%;
+.skills .sass {
   background-color: #be5f8b;
 }
 
-.skils .container .bootstrap {
-  width: 80%;
+.skills .bootstrap {
   background-color: #5e2ca7;
 }
 
-.skils .container .js {
-  width: 60%;
+.skills .js {
   background-color: #efd81d;
 }
 
-.skils .container .php {
-  width: 60%;
+.skills .wordpress {
   background-color: #4d588e;
 }
 
-.skils .container .flutter {
-  width: 70%;
+.skills .flutter {
   background-color: #53c5f9;
 }
 
-.skils .container .git {
-  width: 75%;
+.skills .git {
   background-color: #e84c33;
 }
 
 @media only screen and (max-width: 600px) {
-  .skils {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+  .skills {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
 }
 
-.note {
-  font-size: 0.7em;
+.pro-buttons {
   width: 80vw;
   margin: auto;
-  color: #c7c7ba;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 2rem;
 }
 
-.pro-grid-container {
+.pro-buttons button {
+  border: 0;
+  outline: 0;
+  border-radius: 0px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  padding: .5rem;
+  margin: 0;
+  background-color: white;
+  color: #c7c7ba;
+  font-size: 1.125em;
+  border-bottom: 3px solid #e7e7de;
+  cursor: pointer;
+}
+
+.pro-buttons button:hover {
+  border-bottom: 2px solid #00587a;
+  color: #00587a;
+}
+
+.pro-buttons .active {
+  border-bottom: 3px solid #00587a;
+  color: #00587a;
+}
+
+.pro-html-card, .pro-Wordpress-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 80vw;
+  margin: auto;
+}
+
+.pro-html-card img, .pro-Wordpress-card img {
+  width: 50%;
+}
+
+.pro-html-card .card-body, .pro-Wordpress-card .card-body {
+  background-color: #F7F7F4;
+  width: 50%;
+  padding: 1rem;
+}
+
+.pro-html-card .card-body h4, .pro-Wordpress-card .card-body h4 {
+  color: #00587a;
+}
+
+.pro-html-card .card-body img, .pro-Wordpress-card .card-body img {
+  width: 6rem;
+}
+
+.pro-html-card .card-body p a, .pro-Wordpress-card .card-body p a {
+  color: #078766;
+}
+
+@media only screen and (max-width: 800px) {
+  .pro-buttons button {
+    font-size: 1rem;
+  }
+  .pro-html-card, .pro-Wordpress-card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .pro-html-card img, .pro-Wordpress-card img {
+    width: 100%;
+  }
+  .pro-html-card .card-body, .pro-Wordpress-card .card-body {
+    width: 100%;
+  }
+}
+
+.pro-flutter-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -312,7 +439,14 @@ section h2 {
   margin: auto;
 }
 
-.flip-card {
+.pro-flutter-container .note {
+  font-size: 0.7em;
+  width: 80vw;
+  margin: auto;
+  color: #c7c7ba;
+}
+
+.pro-flutter-container .flip-card {
   margin-top: 2em;
   background-color: transparent;
   width: 275px;
@@ -321,7 +455,7 @@ section h2 {
           perspective: 1000px;
 }
 
-.flip-card .flip-card-inner {
+.pro-flutter-container .flip-card .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
@@ -336,13 +470,8 @@ section h2 {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.flip-card:hover .flip-card-inner {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
+.pro-flutter-container .flip-card .flip-card-inner .flip-card-front,
+.pro-flutter-container .flip-card .flip-card-inner .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -350,17 +479,17 @@ section h2 {
   backface-visibility: hidden;
 }
 
-.flip-card-front {
+.pro-flutter-container .flip-card .flip-card-inner .flip-card-front {
   background-color: #bbb;
   color: black;
 }
 
-.flip-card-front img {
+.pro-flutter-container .flip-card .flip-card-inner .flip-card-front img {
   width: 100%;
   height: 100%;
 }
 
-.flip-card-back {
+.pro-flutter-container .flip-card .flip-card-inner .flip-card-back {
   padding-left: 1em;
   padding-right: 1em;
   background-color: #e7e7de;
@@ -368,6 +497,11 @@ section h2 {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
   overflow: auto;
+}
+
+.pro-flutter-container .flip-card:hover .flip-card-inner {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 .pro-h2 {

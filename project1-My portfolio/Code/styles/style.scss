@@ -4,7 +4,7 @@ $p-color: #008891;
 $body-color: #e7e7de;
 $note-color: #c7c7ba;
 $main-color-for-nav: rgba(15, 48, 87, 0.95);
-
+$a-color:#078766;
 p {
   color: $p-color;
 }
@@ -74,48 +74,101 @@ header {
 nav {
   // background-image: linear-gradient($main-color, rgba(255, 0, 0, 0));
   background-color: $main-color-for-nav;
-  // width: 100vw;
+  display: grid;
+  grid-template-columns: 10fr 1fr;
+  transition: 3s;
 
+
+}
+.cBurgerMenu{
+  // transition: 2s;
+  grid-template-columns: 1fr !important;
+  background-color: rgba($main-color-for-nav, 0.8) !important;
+  height: 100vh;
+  width: 100vw;
   ul {
+    text-align: center;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+  //  position: fixed;
 
-    display: flex;
-    align-content: center;
+   padding-left: 0;
+   
+   margin:0;
+   display: flex;
+   flex-direction: column;
+  //  align-content: center;
     li {
+      padding-top: 5vh;
       a {
+        font-size: 2em;
+        font-weight: bold;
         display: block;
-        text-align: center;
-        padding: 1rem 1.2rem;
+        color: white;
         text-decoration: none;
-        color: $p-color;
-        transition: color 0.5s, font-size 0.5s;
-        &:hover {
-          font-size: 1.25em;
-          color: white;
-        }
       }
     }
-    #nav-img {
-      padding-left: 1em;
-      align-self: center;
-      height: 2em;
-      img {
-        height: 100%;
-        border-radius: 50%;
+  }
+#x{
+  height: 1em;
+  text-align: right;
+}
+}
+@media only screen and (max-width: 600px) {
+  nav {
+    padding: 6px 0;
+    i{
+      display: inline;
+      margin: 1rem;
+      color: $p-color;
+    }
+    ul{
+      list-style-type: none;
+      margin: 0;
+      li{
+        
+        a{
+          display: none;
+        }
       }
     }
   }
 }
-@media only screen and (max-width: 600px) {
+@media (min-width: 601px){
+  
   nav {
     ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+  
+      display: flex;
+      align-content: center;
       li {
         a {
-          padding: 1rem 0.8rem;
+          display: block;
+          text-align: center;
+          padding: 1rem 1.2rem;
+          text-decoration: none;
+          color: $p-color;
+          transition: color 0.5s, font-size 0.5s;
+          &:hover {
+            font-size: 1.25em;
+            color: white;
+          }
         }
       }
+      #nav-img {
+        padding-left: 1em;
+        align-self: center;
+        height: 2em;
+        img {
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+    }
+    i{
+      display: none !important;
     }
   }
 }
@@ -192,127 +245,204 @@ section {
   }
 }
 /* ------------- skils --------------- */
-#skilsH {
+#skillsH {
   color: $h2-color;
   text-align: center;
 }
-.skils {
+.skills {
   width: 80vw;
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 1.5rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  // column-gap: 1.5rem;
+  .html {
+    background-color: #e85d25;
+  }
 
-  .container {
-    width: 100%;
-    background-color: #ddd;
-
-    .skills {
-      text-align: right;
+    .skill {
+      text-align: center;
       padding-top: 0.625em;
       padding-bottom: 0.625em;
       color: white;
-      padding-right: 0.5rem;
+      p{
+        color: white;
+      }
     }
-    .html {
-      width: 90%;
-      background-color: #e85d25;
-    }
+    
     .css {
-      width: 90%;
+     
       background-color: #249cda;
     }
     .sass {
-      width: 85%;
+      
       background-color: #be5f8b;
     }
     .bootstrap {
-      width: 80%;
+     
       background-color: #5e2ca7;
     }
     .js {
-      width: 60%;
+      
       background-color: #efd81d;
     }
-    .php {
-      width: 60%;
+    .wordpress {
+     
       background-color: #4d588e;
     }
     .flutter {
-      width: 70%;
+      
       background-color: #53c5f9;
     }
     .git {
-      width: 75%;
       background-color: #e84c33;
     }
   }
-}
+
 @media only screen and (max-width: 600px) {
-  .skils {
-    grid-template-columns: 1fr;
+  .skills {
+    grid-template-columns: 1fr 1fr;
   }
 }
 // ------------------ pro2.0 --------------------
-.note {
-  font-size: 0.7em;
+.pro-buttons{
   width: 80vw;
   margin: auto;
-  color: $note-color;
+  display: grid;
+grid-template-columns: repeat(3,1fr);
+  margin-bottom: 2rem;
+  button{
+    border: 0;
+    outline:0;
+    border-radius: 0px;
+    transition: 1s;
+    padding: .5rem;
+    margin: 0;
+    background-color: white;
+    color: $note-color;
+    font-size: 1.125em;
+  border-bottom: 3px solid $body-color;
+    cursor: pointer;
+
+    &:hover {
+      // box-shadow: 0 0.25em 0.5em 0 rgba(20, 57, 83, 0.5);
+      border-bottom: 2px solid $h2-color;
+      color: $h2-color;
+    }
+  }
+  .active{
+    border-bottom: 3px solid $h2-color;
+    color: $h2-color;
+  }
 }
-.pro-grid-container {
+
+.pro-html-card,.pro-Wordpress-card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  // flex-direction: column;
+  width: 80vw;
+  margin: auto;
+  img{
+    width: 50%;
+  }
+  .card-body{
+    background-color: #F7F7F4;
+    width: 50%;
+    // border: 1px solid ;
+    // border-left: 0px;
+    padding: 1rem;
+    h4{
+      color: $h2-color;
+    }
+    img{
+      width: 6rem;
+    }
+    p{
+      a{
+        color: $a-color;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 800px){
+  .pro-buttons{
+    button{
+      font-size: 1rem;
+    }
+  }
+  .pro-html-card,.pro-Wordpress-card{
+    flex-direction: column;
+    img{
+      width: 100%;
+    }
+    .card-body{
+      width: 100%;
+    }
+  }
+}
+// ---------------- pro-flutter -------------------------
+.pro-flutter-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 80vw;
   margin: auto;
+  .note {
+    font-size: 0.7em;
+    width: 80vw;
+    margin: auto;
+    color: $note-color;
+  }
+  .flip-card {
+    margin-top: 2em;
+    background-color: transparent;
+    width: 275px;
+    height: 550px;
+    perspective: 1000px;
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      /* text-align: center; */
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+      
+      .flip-card-front {
+        background-color: #bbb;
+        color: black;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      
+      .flip-card-back {
+        padding-left: 1em;
+        padding-right: 1em;
+        background-color: $body-color;
+        color: $main-color;
+        transform: rotateY(180deg);
+        overflow: auto;
+      }
+    
+    }
+    &:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+  }
 }
 
-.flip-card {
-  margin-top: 2em;
-  background-color: transparent;
-  width: 275px;
-  height: 550px;
-  perspective: 1000px;
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    /* text-align: center; */
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
-  &:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-}
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
 
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-  img {
-    width: 100%;
-    height: 100%;
-  }
-}
 
-.flip-card-back {
-  padding-left: 1em;
-  padding-right: 1em;
-  background-color: $body-color;
-  color: $main-color;
-  transform: rotateY(180deg);
-  overflow: auto;
-}
 
 // ------------------ pro --------------------
 .pro-h2 {
@@ -320,6 +450,7 @@ section {
   text-align: center;
   margin-top: 3rem;
 }
+
 .pro-container {
   display: grid;
   grid-template-columns: 1fr;
