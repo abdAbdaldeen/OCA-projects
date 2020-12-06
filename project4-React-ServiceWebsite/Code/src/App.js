@@ -1,6 +1,6 @@
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './App.css';
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 
 import Header from './component/Header/header';
 import LandingPage from './pages/LandingPage';
@@ -12,6 +12,14 @@ import LoginPage from './pages/login/loginPage';
 import { LoginContext } from './LoginContext';
 function App() {
   const [isLogIn, setIsLogIn] = useState(false);
+  useEffect(()=>{
+    if (sessionStorage.getItem('islogin') === 'false') {
+      setIsLogIn(false);
+    }
+    else{
+      setIsLogIn(true);
+    }
+  },[isLogIn])
   return (
     <nav>
       <Router>

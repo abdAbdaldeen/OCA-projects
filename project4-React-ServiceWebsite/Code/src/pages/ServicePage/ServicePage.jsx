@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Card from '../../component/Cards/Card';
-import ServiceData from '../../data/ServicesData';
-import DriveThroughData from '../../data/DriveThroughServiceData';
-import AtSiteService from '../../data/AtSiteServicesData';
-import AtHomeService from '../../data/AtHomeServicesData';
-import '../../component/Cards/CardStyle.css';
-import Tabs from './Tabs';
-import './servicePage.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Card from "../../component/Cards/Card";
+import ServiceData from "../../data/ServicesData";
+import DriveThroughData from "../../data/DriveThroughServiceData";
+import AtSiteService from "../../data/AtSiteServicesData";
+import AtHomeService from "../../data/AtHomeServicesData";
+import "../../component/Cards/CardStyle.css";
+import Tabs from "./Tabs";
+import "./servicePage.css";
 
 const ServicePage = ({ match }) => {
   const [selectedCard, setSelectedCard] = useState(null);
@@ -27,25 +27,25 @@ const ServicePage = ({ match }) => {
     return currentObj;
   };
 
-  if (match.params.slug === 'hospital') {
+  if (match.params.slug === "hospital") {
     Cards = AtSiteService.map((service, index) => {
       return (
-        <div className='col-lg-4 col-md-4'>
+        <div className="col-lg-4 col-md-4">
           <input
-            style={{ appearance: 'none' }}
-            name='hospital'
-            type='radio'
+            style={{ appearance: "none" }}
+            name="hospital"
+            type="radio"
             id={index}
           />
           <label
             style={
               index === selectedCardIndex
                 ? {
-                    background: '#3f72af',
-                    padding: '0.3rem',
-                    borderRadius: '0.3rem',
+                    background: "#3f72af",
+                    padding: "0.3rem",
+                    borderRadius: "0.3rem",
                   }
-                : { background: 'white' }
+                : { background: "white" }
             }
             onClick={() => {
               setSelectedCard(index);
@@ -66,25 +66,25 @@ const ServicePage = ({ match }) => {
         </div>
       );
     });
-  } else if (match.params.slug === 'driveThrough') {
+  } else if (match.params.slug === "driveThrough") {
     Cards = DriveThroughData.map((service, index) => {
       return (
-        <div className='col-lg-4 col-md-4'>
+        <div className="col-lg-4 col-md-4">
           <input
-            style={{ appearance: 'none' }}
-            name='driveThrough'
-            type='radio'
+            style={{ appearance: "none" }}
+            name="driveThrough"
+            type="radio"
             id={index}
           />
           <label
             style={
               index === selectedCardIndex
                 ? {
-                    background: '#3f72af',
-                    padding: '0.3rem',
-                    borderRadius: '0.3rem',
+                    background: "#3f72af",
+                    padding: "0.3rem",
+                    borderRadius: "0.3rem",
                   }
-                : { background: 'white' }
+                : { background: "white" }
             }
             onClick={() => {
               setSelectedCard(index);
@@ -108,22 +108,22 @@ const ServicePage = ({ match }) => {
   } else {
     Cards = AtHomeService.map((service, index) => {
       return (
-        <div className='col-lg-4 col-md-4'>
+        <div className="col-lg-4 col-md-4">
           <input
-            style={{ appearance: 'none' }}
-            name='atHomeService'
-            type='radio'
+            style={{ appearance: "none" }}
+            name="atHomeService"
+            type="radio"
             id={index}
           />
           <label
             style={
               index === selectedCardIndex
                 ? {
-                    background: '#3f72af',
-                    padding: '0.3rem',
-                    borderRadius: '0.3rem',
+                    background: "#3f72af",
+                    padding: "0.3rem",
+                    borderRadius: "0.3rem",
                   }
-                : { background: 'white' }
+                : { background: "white" }
             }
             onClick={() => {
               setSelectedCard(index);
@@ -133,9 +133,9 @@ const ServicePage = ({ match }) => {
             htmlFor={index}
           >
             <Card
-              img={service.labImage}
+              img={service.image}
               alt={service.alt}
-              header={service.labName}
+              header={service.header}
               price={service.price}
               text={service.location}
               isbutton={service.isButton}
@@ -145,17 +145,17 @@ const ServicePage = ({ match }) => {
       );
     });
   }
-  document.title = 'PCR | Service Page';
+  document.title = "PCR | Service Page";
   document.getElementsByTagName(
-    'META'
+    "META"
   )[4].content = `our service ${match.params.slug} to provide our services 24/7`;
   return (
     <>
-      <Link to='/services' className='btn btn-dark my-3'>
+      <Link to="/services" className="btn btn-dark my-3">
         Go Back
       </Link>
-      <div className='container-fluid d-flex justify-content-center cards'>
-        <div className='row'>{Cards}</div>
+      <div className="container-fluid d-flex justify-content-center cards">
+        <div className="row">{Cards}</div>
       </div>
       <Tabs selectedBooking={selectedCardData} />
     </>

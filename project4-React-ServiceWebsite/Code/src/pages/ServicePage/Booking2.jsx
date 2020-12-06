@@ -1,59 +1,73 @@
-import React from 'react';
-import { Alert, Container, Form } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import { Alert, Container, Form } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import PopUp from "./PopUpServicePage";
 
 export default class Booking2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       numberOfPeople: 2,
-      display: 'none',
+      display: "none",
+      popUpOpen: false,
+      alert: "none",
     };
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
   }
   handleSubmit = (e) => {
     e.preventDefault();
     if (!this.props.selectedBooking) {
-      this.setState({ alert: 'block' });
+      this.setState({ alert: "block" });
     } else {
       let newDatabse = [
         {
           numberOfPeople: this.state.numberOfPeople,
-          type: 'for a friend',
+          type: "for a friend",
           bookedServices: this.props.selectedBooking,
         },
       ];
 
-      if (sessionStorage.getItem('bookedServiceDatabase')) {
+      if (sessionStorage.getItem("bookedServiceDatabase")) {
         let oldDatabase = JSON.parse(
-          sessionStorage.getItem('bookedServiceDatabase')
+          sessionStorage.getItem("bookedServiceDatabase")
         );
         let concData = [...oldDatabase, ...newDatabse];
         sessionStorage.setItem(
-          'bookedServiceDatabase',
+          "bookedServiceDatabase",
           JSON.stringify(concData)
         );
-        this.setState({ alert: 'none' });
+        this.setState({ alert: "none" });
+        this.handleOpenModal();
       } else {
         sessionStorage.setItem(
-          'bookedServiceDatabase',
+          "bookedServiceDatabase",
           JSON.stringify(newDatabse)
         );
-        this.setState({ alert: 'none' });
+        this.setState({ alert: "none" });
+        this.handleOpenModal();
       }
     }
   };
+  handleCloseModal() {
+    this.setState({ popUpOpen: false });
+  }
+
+  handleOpenModal() {
+    this.setState({ popUpOpen: true });
+  }
   render() {
     return (
-      <Container style={{ padding: '2rem' }}>
+      <Container style={{ padding: "2rem" }}>
         <Form onSubmit={this.handleSubmit}>
-          <Alert style={{ display: this.state.alert }} variant='danger'>
+          <Alert style={{ display: this.state.alert }} variant="danger">
             You need to pick a service to complete your booking.
           </Alert>
           <Form.Label>Select Number of People :</Form.Label>
           <Form.Control
             onChange={(e) => this.setState({ numberOfPeople: e.target.value })}
-            as='select'
-            name='select'
+            as="select"
+            name="select"
           >
             <option>2</option>
             <option>3</option>
@@ -63,7 +77,7 @@ export default class Booking2 extends React.Component {
           </Form.Control>
         </Form>
         <br />
-        <Alert variant='warning'>
+        <Alert variant="warning">
           Note:
           <br />
           Please make sure that you and your friends bring your national ID when
@@ -72,11 +86,15 @@ export default class Booking2 extends React.Component {
 
         <button
           onClick={this.handleSubmit}
-          className='booking-input'
-          type='submit'
+          className="booking-input"
+          type="submit"
         >
           Book Now
         </button>
+        <PopUp
+          isOpen={this.state.popUpOpen}
+          onRequestClose={this.handleCloseModal}
+        />
       </Container>
     );
   }

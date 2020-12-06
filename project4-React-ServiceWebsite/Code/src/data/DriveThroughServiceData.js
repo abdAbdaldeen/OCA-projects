@@ -7,6 +7,7 @@ const DriveThrough = [
     location: 'Amman,Jordan',
     price: '35 JOD',
     isButton: false,
+    type :"Drive Through"
   },
   {
     image:
@@ -16,6 +17,7 @@ const DriveThrough = [
     location: 'Al-karak,Jordan',
     price: '35 JOD',
     isButton: false,
+    type :"Drive Through"
   },
   {
     image:
@@ -25,6 +27,7 @@ const DriveThrough = [
     location: 'Amman,Jordan',
     price: '35 JOD',
     isButton: false,
+    type :"Drive Through"
   },
 ];
 

@@ -7,6 +7,7 @@ const Hospitals = [
     location: 'Amman, Jordan',
     isButton: false,
     price: '50',
+    type :"At Hospital"
   },
   {
     image:
@@ -16,6 +17,8 @@ const Hospitals = [
     location: 'Irbid, Jordan',
     isButton: false,
     price: '45',
+    type :"At Hospital"
+
   },
   {
     image: 'https://alrai.com/uploads/images/2020/03/15/216345.jpg',
@@ -24,6 +27,8 @@ const Hospitals = [
     location: 'Amman, Jordan',
     isButton: false,
     price: '40',
+    type :"At Hospital"
+
   },
 ];
 
