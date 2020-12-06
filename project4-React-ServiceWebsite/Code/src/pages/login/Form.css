@@ -1,0 +1,60 @@
+.forms {
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+  margin: 4rem 0;
+}
+
+.errors-msg {
+  color: red;
+  font-size: small;
+}
+
+.form-input-btn {
+  text-align: center;
+  /* width: 15.5rem; */
+  /* height: 2.5rem; */
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 2px;
+
+  background-color: #ccd4db;
+
+  outline: none;
+  border: none;
+  /* color: #fff; */
+  font-size: 1rem;
+  outline: none;
+}
+
+.form-input-btn:hover {
+  cursor: pointer;
+  background-color: #bfcbd2;
+  transition: all 0.4s ease-out;
+}
+
+.line {
+  height: 100%;
+  width: 80%;
+  margin: auto;
+  background-color: #d7d4cc;
+}
+
+.sign {
+  text-align: center;
+}
+
+.form-account {
+  padding: 0rem 3rem;
+}
+
+.form-signin {
+  padding: 0rem 3rem;
+}
+
+@media only screen and (max-width: 575px) {
+  .forms {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 2px auto;
+    grid-gap: 2rem;
+  }
+}

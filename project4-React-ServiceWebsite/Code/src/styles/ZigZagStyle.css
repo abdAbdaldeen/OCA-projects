@@ -1,0 +1,45 @@
+.zigzag-container {
+  padding: 64px;
+  background: #e1e1df;
+}
+
+.zigzag-row-container::after {
+  content: '';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clear: both;
+}
+
+.zigzag-column-66 {
+  float: left;
+  width: 50.66666%;
+  padding: 6%;
+}
+
+.zigzag-column-33 {
+  float: left;
+  width: 33.33333%;
+  padding: 25px;
+}
+
+.zigzag-image-style {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.white {
+  background: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .zigzag-column-66,
+  .zigzag-column-33 {
+    width: 100%;
+    text-align: center;
+  }
+  .zigzag-image-style {
+    margin: auto;
+  }
+}

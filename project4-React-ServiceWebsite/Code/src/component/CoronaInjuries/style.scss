@@ -1,0 +1,22 @@
+#CoronaInjuries {
+  text-align: center;
+  h2 {
+    padding: 2rem 0;
+  }
+  .first-con,
+  .second-con {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0;
+    div {
+      text-align: center;
+    }
+    .CountUp {
+      font-size: 2rem;
+    }
+  }
+
+  .first-con {
+    background-color: #e1e1df;
+  }
+}

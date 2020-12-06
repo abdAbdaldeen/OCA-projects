@@ -1,0 +1,68 @@
+.cards {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 3rem;
+}
+
+.cards .card {
+  cursor: pointer;
+}
+
+.cards .card:hover {
+  -webkit-box-shadow: 5px 9px 18px 1px rgba(48, 48, 48, 0.25) !important;
+          box-shadow: 5px 9px 18px 1px rgba(48, 48, 48, 0.25) !important;
+}
+
+.cards .card .flow {
+  overflow: hidden;
+}
+
+.cards .card .flow .card-img-top {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.cards .card .flow .card-img-top:hover {
+  -webkit-transform: scale(1.12);
+          transform: scale(1.12);
+}
+
+.cards .card .card-body {
+  padding: 3rem 0 !important;
+}
+
+.cards .card .card-body .card-title .card-text {
+  font-size: 1rem;
+  padding: 0.5rem 2rem;
+}
+
+.cards .card .card-body .card-title .btn-primary,
+.cards .card .card-body .card-title .btn-primary:hover,
+.cards .card .card-body .card-title .btn-primary:active,
+.cards .card .card-body .card-title .btn-primary:visited,
+.cards .card .card-body .card-title .btn-primary:focus {
+  color: black;
+  background-color: #eef6fd !important;
+  border-color: #bfcbd2 !important;
+}
+
+.cards .card .card-body .card-title .btn-primary:focus,
+.cards .card .card-body .card-title .btn-primary:hover {
+  background-color: #bfcbd2 !important;
+  border-color: #bfcbd2 !important;
+}
+
+.box {
+  height: 230px;
+}
+
+.box .des {
+  margin: 0 !important;
+  margin-top: 24px !important;
+}
+/*# sourceMappingURL=CardStyle.css.map */

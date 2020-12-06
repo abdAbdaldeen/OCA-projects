@@ -1,0 +1,32 @@
+#CoronaInjuries {
+  text-align: center;
+}
+
+#CoronaInjuries h2 {
+  padding: 2rem 0;
+}
+
+#CoronaInjuries .first-con,
+#CoronaInjuries .second-con {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 2rem 0;
+}
+
+#CoronaInjuries .first-con div,
+#CoronaInjuries .second-con div {
+  text-align: center;
+}
+
+#CoronaInjuries .first-con .CountUp,
+#CoronaInjuries .second-con .CountUp {
+  font-size: 2rem;
+}
+
+#CoronaInjuries .first-con {
+  background-color: #e1e1df;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,60 @@
+.booking-input {
+  text-align: center;
+  /* width: 15.5rem; */
+  /* height: 2.5rem; */
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 2px;
+
+  background-color: #ccd4db;
+
+  outline: none;
+  border: none;
+  /* color: #fff; */
+  font-size: 1rem;
+  outline: none;
+}
+
+.booking-input:hover {
+  cursor: pointer;
+  background-color: #bfcbd2;
+  transition: all 0.4s ease-out;
+}
+
+.ReactModalPortal > div {
+  /* opacity: 0; */
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 200ms ease-in-out;
+}
+.ReactModal__Content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 200ms ease-in-out;
+  color: white;
+  max-width: 15rem;
+  max-height: 15rem;
+  outline: none;
+  padding: 2.3rem;
+  text-align: center;
+  border-radius: 4rem;
+}
+
+.modal__title {
+  margin: 0 0 1.5rem 0;
+  color: darkgreen;
+}
+
+.modal__body {
+  color: black;
+  font-size: 2rem;
+  font-weight: 300;
+  word-break: break-all;
+}

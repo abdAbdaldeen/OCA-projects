@@ -1,0 +1,85 @@
+.Profile {
+  .weatherAndlocation-container {
+    text-align: right;
+    padding: 1rem;
+    // background-image: url("https://images.radio.com/aiu-media/gettyimages-1036404942-d63ba65d-c9cb-407d-83ea-ce3fd34ad0af.jpg?width=800");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    .weather-container {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .background-container {
+        background-color: rgba($color: #000000, $alpha: 0.4);
+        padding: 2rem;
+        border-radius: 15px;
+        .flex-c {
+          display: flex;
+          align-items: center;
+          align-content: center;
+          justify-content: center;
+        }
+      }
+    }
+    i {
+      font-size: 1.5rem;
+      background-color: rgba($color: #000000, $alpha: 0.4);
+      padding: 1rem;
+      border-radius: 15px;
+    }
+  }
+
+  .img-container {
+    display: flex;
+    justify-content: center;
+
+    margin-top: -100px;
+
+    .img {
+      background-image: url("https://www.w3schools.com/howto/img_avatar.png");
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: right;
+      position: relative;
+      i {
+        position: absolute;
+        bottom: 0;
+        right: 1rem;
+        font-size: 1.1rem;
+        border-radius: 100%;
+        background-color: #333;
+        color: white;
+        padding: 8px;
+      }
+    }
+  }
+  .info-container {
+    margin-top: 1rem;
+    text-align: center;
+    .Profile-name {
+      font-size: 1.7rem;
+      font-weight: bold;
+    }
+  }
+  .ServicesCom {
+    margin: 2rem;
+    h2 {
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .ServicesCom {
+    margin: 0 !important;
+  }
+}
