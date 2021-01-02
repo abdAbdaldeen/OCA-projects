@@ -2,7 +2,8 @@
   //   padding-top: 5rem;
   align-items: center;
   margin-top: 3rem;
-  .row {
+  a {
+    text-decoration: none !important;
   }
 
   .card {
@@ -52,6 +53,53 @@
   .name {
   }
   .des {
+    margin: 0 !important;
+    margin-top: 24px !important;
+  }
+}
+.MarvelLogo-card {
+  // margin: 2rem 0;
+  text-align: center;
+  margin-top: 1rem;
+  width: 40vw;
+  max-width: 400px;
+  margin: auto;
+  h2 {
+    margin: 2rem 0;
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .MarvelLogo-card {
+    width: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+.developers-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .box {
+    height: 230px;
+    background: repeating-linear-gradient(#3f72af, #112d4e);
+    box-shadow: 1px 1px 1px gray;
+  }
+
+  .box:hover {
+    height: 230px;
+    background: repeating-linear-gradient(#3f72af, #112d4e);
+    box-shadow: 1px 1px 1px gray;
+  }
+
+  .img-box {
+    border-radius: 50%;
+    box-shadow: 1px 1px 10px #112d4e;
+  }
+
+  .box .des {
     margin: 0 !important;
     margin-top: 24px !important;
   }

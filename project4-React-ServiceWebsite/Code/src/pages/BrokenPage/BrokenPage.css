@@ -1,0 +1,21 @@
+.BrokenPage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.BrokenPageImg {
+  max-width: 50rem;
+  /* max-height: 35rem; */
+}
+
+.BrokenPageH {
+  text-align: center;
+}
+@media only screen and (max-width: 575px) {
+  .BrokenPageImg {
+    width: 15rem;
+  }
+}

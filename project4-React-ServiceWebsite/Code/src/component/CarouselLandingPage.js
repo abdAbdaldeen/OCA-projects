@@ -41,7 +41,8 @@ const ImageCarousel = () => {
               <h4>GM of Orange Coding Academy</h4>
               <p>
                 PCR is an excellent choice for anybody who wants to make
-                covid-19 test.
+                covid-19 test. I recommend it to anybody
+                enquiring.
               </p>
             </div>
           </div>
@@ -56,7 +57,8 @@ const ImageCarousel = () => {
               <h4>Expert Lead Trainer At Orange Coding Academy</h4>
               <p>
                 It was a pleasure to book from PCR. I recommend it to anybody
-                enquiring.
+                enquiring. I tried it with all the Coding Academy teams and we were happy about it 
+
               </p>
             </div>
           </div>

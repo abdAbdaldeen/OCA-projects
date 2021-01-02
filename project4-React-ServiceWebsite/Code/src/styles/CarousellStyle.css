@@ -10,8 +10,13 @@
 .image-carousel-container {
   background-color: #d7d4cc;
   width: 100%;
+  padding: 1.5rem 0;
 }
-
+/* @media only screen and (max-width: 575px) {
+  .image-carousel-container {
+    padding: 2rem !important;
+  }
+} */
 .carousel .slide {
   background: #fff !important;
   color: black;
@@ -28,7 +33,7 @@
 .myCarousel {
   background: whitesmoke;
   margin-top: -6%;
-  width: 40%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
   padding-top: 6%;
@@ -77,7 +82,7 @@
 }
 
 .myCarousel p:before {
-  content: '“';
+  content: "“";
   color: #aaa;
   font-size: 26px;
   font-family: monospace;
@@ -85,7 +90,7 @@
 }
 
 .myCarousel p:after {
-  content: '”';
+  content: "”";
   color: #aaa;
   font-size: 26px;
   font-family: monospace;
@@ -101,7 +106,7 @@
 }
 
 .carousel.carousel-slider .control-arrow {
-  background: #000 !important;
+  /* background: #000 !important; */
   border-radius: 100% !important;
   height: 55px !important;
   width: 50px !important;

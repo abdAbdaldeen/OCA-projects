@@ -58,3 +58,13 @@
   font-weight: 300;
   word-break: break-all;
 }
+
+.booking-error {
+  color: red;
+}
+#booking-checkbox-label {
+  display: flex;
+}
+.tabs .nav-tabs .nav-item .nav-link {
+  cursor: pointer;
+}

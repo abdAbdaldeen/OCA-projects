@@ -62,7 +62,6 @@
 }
 
 .Profile .img-container .img {
-  background-image: url("https://www.w3schools.com/howto/img_avatar.png");
   width: 200px;
   height: 200px;
   border-radius: 100%;
@@ -79,14 +78,19 @@
   right: 1rem;
   font-size: 1.1rem;
   border-radius: 100%;
-  background-color: #333;
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   padding: 8px;
+  cursor: pointer;
 }
 
 .Profile .info-container {
   margin-top: 1rem;
   text-align: center;
+}
+
+.Profile .info-container #file-myImage {
+  display: none;
 }
 
 .Profile .info-container .Profile-name {
@@ -101,6 +105,18 @@
 .Profile .ServicesCom h2 {
   text-align: center;
   padding-bottom: 1rem;
+}
+
+.Profile .TableHead {
+  background-color: #3f72af;
+}
+
+.Profile .TableHead .TableHead-TableCell {
+  color: #fff;
+}
+
+.Profile .TableRow:nth-child(even) {
+  background-color: #dbe2ef !important;
 }
 
 @media only screen and (max-width: 575px) {

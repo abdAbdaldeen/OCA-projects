@@ -10,10 +10,12 @@ import ServicesPage from './pages/servicesPage/services';
 import ServicePage from './pages/ServicePage/ServicePage';
 import LoginPage from './pages/login/loginPage';
 import { LoginContext } from './LoginContext';
+import BrokenPage from './pages/BrokenPage/BrokenPage'
+import NotFound from './pages/notfound/NotFound'
 function App() {
   const [isLogIn, setIsLogIn] = useState(false);
   useEffect(()=>{
-    if (sessionStorage.getItem('islogin') === 'false') {
+    if (sessionStorage.getItem('islogin') === 'false' || !sessionStorage.getItem('islogin')) {
       setIsLogIn(false);
     }
     else{
@@ -25,11 +27,14 @@ function App() {
       <Router>
         <LoginContext.Provider value={{ isLogIn, setIsLogIn }}>
           <Header />
-          <Route path='/' component={LandingPage} exact />
-          <Route path='/profile' component={ProfilePage} />
-          <Route path='/services' component={ServicesPage} />
+          <Switch >
+          <Route path='/' component={  LandingPage  } exact />
+          <Route path='/profile' component={ isLogIn ? ProfilePage : BrokenPage} />
+          <Route path='/services' component={isLogIn ? ServicesPage : BrokenPage} />
           <Route path='/login' component={LoginPage} />
-          <Route path='/service/:slug' component={ServicePage} />
+          <Route path='/service/:slug' component={ isLogIn ? ServicePage : BrokenPage} />
+          <Route path='*' component={NotFound} />
+          </Switch>
           <Footer />
         </LoginContext.Provider>
       </Router>

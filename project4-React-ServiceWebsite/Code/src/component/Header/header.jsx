@@ -1,61 +1,61 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState } from "react";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './style.css';
-import logo from '../../img/cover.png';
-import { Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { LinkContainer } from 'react-router-bootstrap';
-import { LoginContext } from '../../LoginContext';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./style.css";
+import logo from "../../img/cover.png";
+import { Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
+import { LoginContext } from "../../LoginContext";
 export default function Header() {
   // const [isLogIn, setIsLogIn] = useState(sessionStorage.getItem("isLogin"));
   const { isLogIn, setIsLogIn } = useContext(LoginContext);
   return (
-    <header className='navbar navbar-expand-sm navbar-dark'>
-      <div className='container'>
-        <Navbar.Brand href='#home'>
-          <Link to='/'>
+    <header className="navbar navbar-expand-sm navbar-dark">
+      <div className="container">
+        <Navbar.Brand href="#home">
+          <Link to="/">
             <img
               src={logo}
-              height='60'
-              className='d-inline-block '
-              alt='PCR logo'
+              height="60"
+              className="d-inline-block "
+              alt="PCR logo"
             />
           </Link>
         </Navbar.Brand>
         <button
-          className='navbar-toggler'
-          data-toggle='collapse'
-          data-target='#navbarNav'
+          className="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarNav"
         >
-          <span className='navbar-toggler-icon'></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div className='collapse navbar-collapse' id='navbarNav'>
-          <ul className='navbar-nav ml-auto'>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ml-auto">
             {isLogIn ? (
               <>
-                <LinkContainer to='/services'>
-                  <li className='nav-item'>Services</li>
+                <LinkContainer to="/services">
+                  <li className="nav-item">Services</li>
                 </LinkContainer>
-                <LinkContainer to='/profile'>
-                  <li className='nav-item'>Profile</li>
+                <LinkContainer to="/profile">
+                  <li className="nav-item">Profile</li>
                 </LinkContainer>
-                <LinkContainer to='/'>
+                <LinkContainer to="/">
                   <li
                     onClick={() => {
                       sessionStorage.clear();
-                      sessionStorage.setItem('islogin', false);
+                      sessionStorage.setItem("islogin", false);
                       setIsLogIn(false);
                     }}
-                    className='nav-item'
+                    className="nav-item"
                   >
                     Logout
                   </li>
                 </LinkContainer>
               </>
             ) : (
-              <LinkContainer to='/login'>
-                <li className='nav-item'>Log in / Register</li>
+              <LinkContainer to="/login">
+                <li className="nav-item">Login / Register</li>
               </LinkContainer>
             )}
           </ul>

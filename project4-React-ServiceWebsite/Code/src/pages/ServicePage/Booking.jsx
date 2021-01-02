@@ -1,15 +1,15 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { render } from '@testing-library/react';
-import { Alert, Container, Form } from 'react-bootstrap';
-import PopUp from './PopUpServicePage';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { render } from "@testing-library/react";
+import { Alert, Container, Form } from "react-bootstrap";
+import PopUp from "./PopUpServicePage";
 // import 'servicePage.css';
 
 const initialState = {
-  nationalId: '',
+  nationalId: "",
   popUpOpen: false,
-  nationalIdError: '',
-  alert: 'none',
+  nationalIdError: "",
+  alert: "none",
   bookedServices: [],
 };
 
@@ -32,12 +32,12 @@ export default class Booking extends React.Component {
   };
 
   validate = () => {
-    let nationalIdError = '';
+    let nationalIdError = "";
 
     if (!this.state.nationalId) {
-      nationalIdError = 'National ID is required';
+      nationalIdError = "National ID is required";
     } else if (this.state.nationalId.length !== 10) {
-      nationalIdError = 'National ID needs to be 10 characters';
+      nationalIdError = "National ID needs to be 10 characters";
     }
 
     if (nationalIdError) {
@@ -54,32 +54,32 @@ export default class Booking extends React.Component {
     const isValid = this.validate();
 
     if (!this.props.selectedBooking) {
-      this.setState({ alert: 'block' });
+      this.setState({ alert: "block" });
     } else if (isValid) {
       let newDatabse = [
         {
           nationalId: this.state.nationalId,
-          type: 'for your self',
+          type: "for your self",
           bookedServices: this.props.selectedBooking,
         },
       ];
 
-      if (sessionStorage.getItem('bookedServiceDatabase')) {
+      if (sessionStorage.getItem("bookedServiceDatabase")) {
         let oldDatabase = JSON.parse(
-          sessionStorage.getItem('bookedServiceDatabase')
+          sessionStorage.getItem("bookedServiceDatabase")
         );
         let concData = [...oldDatabase, ...newDatabse];
         sessionStorage.setItem(
-          'bookedServiceDatabase',
+          "bookedServiceDatabase",
           JSON.stringify(concData)
         );
-        this.setState({ alert: 'none' });
+        this.setState({ alert: "none" });
       } else {
         sessionStorage.setItem(
-          'bookedServiceDatabase',
+          "bookedServiceDatabase",
           JSON.stringify(newDatabse)
         );
-        this.setState({ alert: 'none' });
+        this.setState({ alert: "none" });
       }
 
       this.setState(initialState);
@@ -97,33 +97,33 @@ export default class Booking extends React.Component {
 
   render() {
     return (
-      <Container style={{ padding: '2rem' }} className='booking-form'>
+      <Container style={{ padding: "2rem" }} className="booking-form">
         <Form onSubmit={this.handleSubmit}>
           <Form.Group>
-            <Alert style={{ display: this.state.alert }} variant='danger'>
+            <Alert style={{ display: this.state.alert }} variant="danger">
               You need to pick a service to complete your booking.
             </Alert>
-            <Form.Label>National ID :</Form.Label>
+            <Form.Label>National ID:</Form.Label>
             <br />
             <Form.Control
               required
-              type='number'
-              placeholder='Enter Your National ID'
-              name='nationalId'
+              type="number"
+              placeholder="Enter Your National ID"
+              name="nationalId"
               value={this.state.nationalId}
               onChange={this.handleChange}
               isInvalid={this.state.nationalIdError}
             />
-            <div className='booking-error'>{this.state.nationalIdError}</div>
+            <div className="booking-error">{this.state.nationalIdError}</div>
           </Form.Group>
-          <Form.Check
-            type='checkbox'
-            label='Do you have any chronic disease ?'
-          />
+          <label id="booking-checkbox-label" htmlFor="booking-checkbox">
+            <Form.Check id="booking-checkbox" type="checkbox" label="" />
+            Do you have any chronic disease ?
+          </label>
           <br />
 
           <div>
-            <button className='booking-input' type='submit'>
+            <button className="booking-input" type="submit">
               Book Now
             </button>
           </div>

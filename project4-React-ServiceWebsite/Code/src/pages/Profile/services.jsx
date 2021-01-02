@@ -30,20 +30,35 @@ export default class Services extends Component {
         <h2>Booked Services</h2>
         <TableContainer component={Paper}>
           <Table aria-label="simple table">
-            <TableHead>
+            <TableHead className="TableHead">
               <TableRow>
-                <TableCell align="center">Type of service</TableCell>
-                <TableCell align="center">Service provider name</TableCell>
-                <TableCell align="center">Location</TableCell>
-                <TableCell align="center">Price</TableCell>
-                <TableCell align="center">Details</TableCell>
+                <TableCell className="TableHead-TableCell" align="center">
+                  Type of service
+                </TableCell>
+                <TableCell className="TableHead-TableCell" align="center">
+                  Service provider name
+                </TableCell>
+                <TableCell className="TableHead-TableCell" align="center">
+                  Location
+                </TableCell>
+                <TableCell className="TableHead-TableCell" align="center">
+                  Price
+                </TableCell>
+                <TableCell className="TableHead-TableCell" align="center">
+                  Details
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {this.state.Database &&
                 this.state.Database.map((service) => (
-                  <TableRow>
-                    <TableCell align="center" component="th" scope="row">
+                  <TableRow className="TableRow">
+                    <TableCell
+                      className="TableCell"
+                      align="center"
+                      component="th"
+                      scope="row"
+                    >
                       {service.bookedServices.type}
                     </TableCell>
                     <TableCell align="center">

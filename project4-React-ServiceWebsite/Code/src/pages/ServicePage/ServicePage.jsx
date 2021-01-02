@@ -151,9 +151,6 @@ const ServicePage = ({ match }) => {
   )[4].content = `our service ${match.params.slug} to provide our services 24/7`;
   return (
     <>
-      <Link to="/services" className="btn btn-dark my-3">
-        Go Back
-      </Link>
       <div className="container-fluid d-flex justify-content-center cards">
         <div className="row">{Cards}</div>
       </div>
