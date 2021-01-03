@@ -1,6 +1,19 @@
 {
-  "name": "frontend",
+  "name": "Askadenya",
   "version": "0.1.0",
+  "keywords": [
+"Restaurant",
+"Food",
+"Menu",
+"Fast food",
+"Cold drinks",
+"Desserts",
+"Hot drinks",
+"Traditional food",
+"Pasta"
+  ],
+  "description": "Askadenya is a restaurant menu web application that’s make the process of ordering food much easier and it’s available 24/7",
+  "author": ".JSX",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.2",
