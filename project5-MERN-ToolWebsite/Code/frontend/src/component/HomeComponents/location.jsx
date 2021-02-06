@@ -13,7 +13,11 @@ const mapStyle = {
 class Location extends Component {
   render() {
     return (
-      <div className="container-Location">
+      <div
+        data-aos="fade-in"
+        data-aos-duration="1500"
+        className="container-Location"
+      >
         <div class="row">
           <div class="column">
             <div class="card">

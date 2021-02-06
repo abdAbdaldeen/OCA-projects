@@ -7,8 +7,8 @@ const historybase = require('../Schema/history');
 router.get('/:id', function(req, res, next) {
   if (req.params.id) {
     
-    const UserModel = mongoose.model("history"+req.params.id, historybase);
-    UserModel.find((e,r) => {
+    const historyModel = mongoose.model("history"+req.params.id, historybase);
+    historyModel.find((e,r) => {
       if(e){
           console.log(e)
       }

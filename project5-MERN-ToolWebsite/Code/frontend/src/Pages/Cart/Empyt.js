@@ -12,14 +12,11 @@ export default function Empyt() {
           Don't miss the opportunity to order from our website, order your
           meal now!
         </p>
-        {/* <Link
-          to={{
-            pathname: "/",
-            hash: "#test",
-          }}
+        <Link
+          to="/menu"
         >
-          test
-        </Link> */}
+          Back to menu
+        </Link>
       </div>
     </div>
   );

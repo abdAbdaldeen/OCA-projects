@@ -4,19 +4,26 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// =========================
+// =========================
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var cartRouter = require('./routes/cart');
 var historyRouter = require('./routes/history');
 var contactUs = require('./routes/contactUs');
-// ------------------
+// =========================
+// =========================
 var cors = require("cors");
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-
+// =========================
+// =========================
 var app = express();
-// ------------------
 dotenv.config();
+// =========================
+// =========================
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,12 +45,18 @@ mongoose
     console.log('Connection failed! -> '+ e);
   });
   
+// ------------------
+// =========================
+// =========================
   app.use(cors());
 app.use('/', indexRouter);
 app.use('/cart', cartRouter);
 app.use('/history', historyRouter);
 app.use('/users', usersRouter);
-app.use('/contactUs', contactUs);
+app.use('/contactUs', contactUs)
+// ------------------
+// =========================
+// =========================
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

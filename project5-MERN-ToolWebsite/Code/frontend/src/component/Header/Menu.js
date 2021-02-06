@@ -55,6 +55,9 @@ export default function SimpleMenu(x) {
         <Link to={`/menu/Desserts`}>
         <MenuItem onClick={handleClose}>Desserts</MenuItem>
         </Link>
+        <Link to={`/menu`}>
+        <MenuItem onClick={handleClose}>All Products</MenuItem>
+        </Link>
       </Menu>
     </div>
   );

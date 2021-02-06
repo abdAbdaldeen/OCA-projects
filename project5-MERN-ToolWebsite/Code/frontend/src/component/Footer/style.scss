@@ -1,6 +1,13 @@
 .footer {
   background-color: #fffded;
-  padding: 2rem 0;
+  padding-top: 2rem;
+  .vr {
+    background-color: #02594d;
+    height: 100%;
+    width: 100%;
+    opacity: 0.6;
+  }
+
   .i-inline {
     display: inline;
   }
@@ -37,13 +44,6 @@
       align-items: center;
       // grid-gap: 5rem;
       // text-align: center;
-
-      .vr {
-        background-color: #02594d;
-        height: 100%;
-        width: 100%;
-        opacity: 0.6;
-      }
     }
 
     @media screen and (max-width: 770px) {
@@ -81,5 +81,22 @@
   .submit:hover {
     background-color: #02594d;
     opacity: 0.8;
+  }
+}
+.RightsVR {
+  background-color: #02594d;
+  height: 2px;
+  opacity: 0.6;
+  width: 90%;
+  margin: auto;
+  margin-top: 2rem;
+}
+.Rights {
+  text-align: center;
+  background-color: #fffded;
+  padding: 1rem;
+  color: #02594d;
+  p {
+    margin: 0;
   }
 }

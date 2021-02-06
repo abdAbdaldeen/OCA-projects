@@ -5,12 +5,16 @@ import Footer from './component/Footer/Footer'
 import Header from './component/Header/Header'
 import Cart from './Pages/Cart/Cart'
 import Products from './Pages/Products/Products'
+import AllProducts from './Pages/AllProducts/AllProducts'
 import Profile from './Pages/profilePage/Profile'
 import Notfound from './Pages/pageNotFound/Notfound'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import axios from 'axios';
 import {NumContext} from './NumContext'
 import Homepage from "./Pages/Home_page/home"
+import "aos/dist/aos.css";
+import AOS from "aos";
+AOS.init();
 
 function App() {
   const [cartNumber, setcartNumber] = useState(0)
@@ -44,6 +48,7 @@ function App() {
           <Route path='/login' component={Login} />
           <Route path='/cart' component={Cart} />
           <Route path='/profile' component={Profile} />
+          <Route path='/menu' exact component={AllProducts} />
           <Route path='/menu/:category' exact component={Products} />
           <Route path='/menu/:category/:product' component={Product} />
           <Route path='/*' component={Notfound} />

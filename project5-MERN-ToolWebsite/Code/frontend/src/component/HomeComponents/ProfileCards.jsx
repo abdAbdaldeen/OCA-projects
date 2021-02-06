@@ -15,7 +15,7 @@ function ProfileCards() {
     },
 
     {
-      name: "Saltbae",
+      name: "Nusrat",
       personalImg:
         "https://static.arageek.com/wp-content/uploads/2018/05/saltbae.0-e1525289498209.jpg",
     },
@@ -26,7 +26,11 @@ function ProfileCards() {
     },
   ]);
   return (
-    <section className="chafs-container">
+    <section
+      data-aos="fade-in"
+      data-aos-duration="1500"
+      className="chafs-container"
+    >
       <h2 className="about-h">Our partners</h2>
       <div className="flex-container">
         {users.map((user) => (

@@ -8,15 +8,12 @@ class EditData extends Component {
     super(props);
     this.state = {
       fullName: "",
-      email: "",
       phone: "",
-      emailError: "",
       phoneError: "",
     };
   }
   componentWillMount() {
     this.setState({
-      email: this.props.email,
       fullName: this.props.fullName,
       phone: this.props.phone,
     });
@@ -30,15 +27,15 @@ class EditData extends Component {
   onSubmit = (event) => {
     event.preventDefault();
     this.setState({
-      emailError: "",
       phoneError: "",
     });
-    const emailError = validator.isEmail(this.state.email);
-    const phoneError = validator.isLength(this.state.phone, { min: 10 });
-    if (emailError && phoneError) {
+    const phoneError = validator.isLength(this.state.phone, {
+      min: 10,
+      max: 10,
+    });
+    if (phoneError) {
       const registered = {
         fullName: this.state.fullName,
-        email: this.state.email,
         phone: this.state.phone,
       };
       axios
@@ -48,15 +45,9 @@ class EditData extends Component {
           registered
         )
         .then((res) => {
-          console.log(res.data);
           this.props.editDone();
         });
-    } else if (!emailError) {
-      this.setState({
-        emailError: "Invalid Email",
-      });
-    }
-    if (!phoneError) {
+    } else if (!phoneError) {
       this.setState({
         phoneError: "Invalid Phone",
       });
@@ -78,19 +69,8 @@ class EditData extends Component {
 
         <div className="name">
           <TextField
-            name="email"
-            label="Email"
-            variant="filled"
-            defaultValue={this.props.email}
-            onChange={this.hchange}
-            error={this.state.emailError}
-            helperText={this.state.emailError}
-          />
-        </div>
-
-        <div className="name">
-          <TextField
             name="phone"
+            type="number"
             label="Phone"
             variant="filled"
             defaultValue={this.props.phone}

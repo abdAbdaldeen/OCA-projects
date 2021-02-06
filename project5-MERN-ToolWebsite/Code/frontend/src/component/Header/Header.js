@@ -26,7 +26,6 @@ export default function Header() {
           <img src={navL} alt="" className="fullL" />
             <img src={navCL} alt="" className="CL" />
           </Link>
-            
           </Typography>
           <Menu isLogin={isLogin}/>
           {isLogin ? (

@@ -30,8 +30,8 @@ const base = new mongoose.Schema({
 router.get('/:id', function(req, res, next) {
   if (req.params.id) {
     
-    const UserModel = mongoose.model(req.params.id, base);
-    UserModel.find((e,r) => {
+    const CartModel = mongoose.model("cart-"+req.params.id, base);
+    CartModel.find((e,r) => {
       if(e){
           console.log(e)
       }
@@ -45,8 +45,8 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.post('/:id', function(req, res) {
-  const UserModel = mongoose.model(req.params.id, base);
-  const newData = new UserModel (req.body)
+  const CartModel = mongoose.model("cart-"+req.params.id, base);
+  const newData = new CartModel (req.body)
   newData.save(function(err){
       if (err) {
       res.send("data not saved");
@@ -57,8 +57,8 @@ res.send("data saved");
 });
 
 router.put('/update/:userid/:oid', function(req, res) {
-  const UserModel = mongoose.model(req.params.userid, base);
-  UserModel.updateOne({_id: req.params.oid},{number: req.body.number,adds: req.body.adds, },function (err, docs) { 
+  const CartModel = mongoose.model("cart-"+req.params.userid, base);
+  CartModel.updateOne({_id: req.params.oid},{number: req.body.number,adds: req.body.adds, },function (err, docs) { 
       if (err){ 
           console.log(err) 
       } 
@@ -70,16 +70,16 @@ router.put('/update/:userid/:oid', function(req, res) {
 });
 
 router.delete('/all/:userid', function(req, res) {
-    const UserModel = mongoose.model(req.params.userid, base);
+    const CartModel = mongoose.model("cart-"+req.params.userid, base);
     const historyModel = mongoose.model("history"+req.params.userid, historybase);
-    UserModel.find((e,r) => {
+    CartModel.find((e,r) => {
       if(e){
-          console.log(e)
+        res.status(500).json(err)
       }
       else{
             const newData = new historyModel ({p: r})
             newData.save().then(()=>{
-                UserModel.deleteMany().then(()=>{
+                CartModel.deleteMany().then(()=>{
           res.send("all done");
 
                 })
@@ -89,7 +89,7 @@ router.delete('/all/:userid', function(req, res) {
   });
 
 router.delete('/:userid/:oid', function(req, res) {
-  const UserModel = mongoose.model(req.params.userid, base);
+  const UserModel = mongoose.model("cart-"+req.params.userid, base);
   UserModel.findByIdAndDelete(req.params.oid)
   .then(()=>{
     res.send("data delete");

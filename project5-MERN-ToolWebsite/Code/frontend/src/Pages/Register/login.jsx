@@ -5,6 +5,8 @@ import validator from "validator";
 import "./style.scss";
 import chef from "./chef.png";
 import waiter from "./waiter.png";
+import GoogleLogin from "react-google-login";
+
 // import FacebookLogin from "react-facebook-login";
 import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 import { Redirect } from "react-router-dom";
@@ -31,7 +33,31 @@ export default class login extends Component {
     };
     // this.
   }
+  responseSuccessGoogle = (res) => {
+    if (res) {
+      if (res.profileObj.name) {
+        const registered = {
+          fullName: res.profileObj.name,
+          email: res.profileObj.email,
+          avatar: res.profileObj.imageUrl,
+        };
+        axios
+          .post("http://localhost:8000/users/facebook", registered)
+          .then((res) => {
+            sessionStorage.setItem("userId", res.data._id);
+            this.props.setisLogin(true);
+            this.props.getcartNumber();
 
+            this.setState({
+              redirect: true,
+            });
+          });
+      }
+    }
+  };
+  responseFailureGoogle = (res) => {
+    console.log(res);
+  };
   responseFacebook = (response) => {
     if (response) {
       if (response.name) {
@@ -77,6 +103,7 @@ export default class login extends Component {
       emailErrorS: "",
       phoneErrorS: "",
     });
+
     const emailError = validator.isEmail(this.state.emailS);
     const passwordError = validator.isStrongPassword(this.state.passwordS, {
       minLength: 6,
@@ -179,12 +206,23 @@ export default class login extends Component {
                       </a>
                     )}
                   />
-                  {/* <a href="#" className="social">
-                    <i className="fab fa-facebook-f"></i>
-                  </a> */}
+                  <GoogleLogin
+                    clientId="99398379882-rgd084aj9nvmn18uhio87pa6cq31jov2.apps.googleusercontent.com"
+                    onSuccess={this.responseSuccessGoogle}
+                    onFailure={this.responseFailureGoogle}
+                    render={(renderProps) => (
+                      <a
+                        href="#"
+                        onClick={renderProps.onClick}
+                        className="social"
+                      >
+                        <i className="fab fa-google"></i>
+                      </a>
+                    )}
+                  />
 
                   {/* <a href="#" className="social">
-                    <i className="fab fa-google-plus-g"></i>
+                    <i className="fab fa-google"></i>
                   </a>
                   <a href="#" className="social">
                     <i className="fab fa-linkedin-in"></i>
@@ -262,8 +300,22 @@ export default class login extends Component {
                       </a>
                     )}
                   />
+                  <GoogleLogin
+                    clientId="99398379882-rgd084aj9nvmn18uhio87pa6cq31jov2.apps.googleusercontent.com"
+                    onSuccess={this.responseSuccessGoogle}
+                    onFailure={this.responseFailureGoogle}
+                    render={(renderProps) => (
+                      <a
+                        href="#"
+                        onClick={renderProps.onClick}
+                        className="social"
+                      >
+                        <i className="fab fa-google"></i>
+                      </a>
+                    )}
+                  />
                   {/* <a href="#" className="social">
-                    <i className="fab fa-google-plus-g"></i>
+                    <i className="fab fa-google"></i>
                   </a>
                   <a href="#" className="social">
                     <i className="fab fa-linkedin-in"></i>
@@ -377,8 +429,22 @@ export default class login extends Component {
                     </a>
                   )}
                 />
+                <GoogleLogin
+                  clientId="99398379882-rgd084aj9nvmn18uhio87pa6cq31jov2.apps.googleusercontent.com"
+                  onSuccess={this.responseSuccessGoogle}
+                  onFailure={this.responseFailureGoogle}
+                  render={(renderProps) => (
+                    <a
+                      href="#"
+                      onClick={renderProps.onClick}
+                      className="social"
+                    >
+                      <i className="fab fa-google"></i>
+                    </a>
+                  )}
+                />
                 {/* <a href="#" className="social">
-                  <i className="fab fa-google-plus-g"></i>
+                  <i className="fab fa-google"></i>
                 </a>
                 <a href="#" className="social">
                   <i className="fab fa-linkedin-in"></i>
@@ -455,11 +521,25 @@ export default class login extends Component {
                     </a>
                   )}
                 />
+                <GoogleLogin
+                  clientId="99398379882-rgd084aj9nvmn18uhio87pa6cq31jov2.apps.googleusercontent.com"
+                  onSuccess={this.responseSuccessGoogle}
+                  onFailure={this.responseFailureGoogle}
+                  render={(renderProps) => (
+                    <a
+                      href="#"
+                      onClick={renderProps.onClick}
+                      className="social"
+                    >
+                      <i className="fab fa-google"></i>
+                    </a>
+                  )}
+                />
                 {/* <a href="#" className="social">
                   <i className="fab fa-facebook-f"></i>
                 </a> */}
                 {/* <a href="#" className="social">
-                  <i className="fab fa-google-plus-g"></i>
+                  <i className="fab fa-google"></i>
                 </a>
                 <a href="#" className="social">
                   <i className="fab fa-linkedin-in"></i>

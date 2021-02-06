@@ -6,6 +6,7 @@ import { Redirect } from "react-router-dom";
 import { Button, TextField, Typography, Breadcrumbs } from "@material-ui/core";
 import EditData from "./editData";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
+import { WaveTopBottomLoading } from "react-loadingg";
 
 import { Link } from "react-router-dom";
 import Htabel from "./Htabel";
@@ -111,7 +112,6 @@ function Profile() {
               <>
                 <EditData
                   fullName={user.fullName}
-                  email={user.email}
                   phone={user.phone}
                   editDone={editDone}
                 />
@@ -124,7 +124,13 @@ function Profile() {
       </div>
     );
   } else {
-    return "loding...";
+    return (
+      <>
+        <div className="marginLoading"></div>
+        {/* <CoffeeLoading size="small" color="#02594d" /> */}
+        <WaveTopBottomLoading size="large" color="#02594d" />
+      </>
+    );
   }
 }
 

@@ -74,3 +74,6 @@ a {
 .ourGreen {
   background-color: #02594d !important;
 }
+.marginLoading {
+  height: 80vh;
+}

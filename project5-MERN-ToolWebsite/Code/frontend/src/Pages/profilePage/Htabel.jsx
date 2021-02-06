@@ -57,13 +57,13 @@ function Row(props) {
               <Typography variant="h6" gutterBottom component="div">
                 Details
               </Typography>
-              <Table size="small" aria-label="purchases">
+              <Table className="subTable" size="small" aria-label="purchases">
                 <TableHead>
                   <TableRow>
                     <TableCell>Name</TableCell>
                     <TableCell>Quantity</TableCell>
-                    <TableCell>Additions</TableCell>
                     <TableCell>Price</TableCell>
+                    <TableCell>Additions</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -74,11 +74,13 @@ function Row(props) {
                       </TableCell>
                       <TableCell>{historyRow.number}</TableCell>
                       <TableCell>
+                        {historyRow.price * historyRow.number} JOD
+                      </TableCell>
+                      <TableCell>
                         {historyRow.adds.map(
                           (add) => add.value && add.name + " | "
                         )}
                       </TableCell>
-                      <TableCell>{historyRow.price} JOD</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

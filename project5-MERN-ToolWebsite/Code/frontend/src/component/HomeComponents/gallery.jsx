@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 
 function gallery() {
   return (
-    <section id="menu" className="container-gallery">
+    <section data-aos="fade-in"
+    data-aos-duration="1500"  id="menu" className="container-gallery">
       <img className="gallery__icon" src={ImgMune} alt="menu" />
 
       {/* <h1>Our Categories</h1> */}
