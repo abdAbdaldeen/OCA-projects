@@ -105,10 +105,16 @@ if (isset($_GET["name"])) {
                     <div class="product-details">
                       <h2>
                         <a href="single-product.php?id='.$row["product_id"].'">'.$row['name'].'</a>
-                      </h2>
+                      </h2>';
 
-                      <span class="price">$'.$row['price'].'</span>
-                      <p class="products-desc">'.$row['description'].'</p>
+                      if ($row["discount_price"] ==0) {
+                        echo '<span class="price">$'.$row["price"].' </span>';
+                      }else{
+                        echo '<del class="price">$'.$row["price"].' </del>';
+                        echo '<span class="price">New Price $'.$row["discount_price"].' </span>';
+                      }
+
+                      echo'<p class="products-desc">'.$row['description'].'</p>
                     
                       <a href="single-product.php?id='.$row["product_id"].'" class="btn btn-add-to-cart">+ Add to Cart</a>
                       </div>

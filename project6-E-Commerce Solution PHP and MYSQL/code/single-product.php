@@ -1,11 +1,9 @@
 <?php
-
 include('includes/publicHeader.php');
 include("includes/db_connection.php");
 $conn = OpenCon();
 if (!isset($_GET["id"])) {
-header("location:index.php");
-    
+  header("location:index.php");
 }
 $id=$_GET["id"];
 $sql = "SELECT * FROM products WHERE product_id=$id";
@@ -44,8 +42,15 @@ header("location:index.php");
             <div class="col-lg-7 mt-5 mt-lg-0">
               <div class="product-details">
                 <h2><a href="single-product.php"><?php echo $row["name"] ?></a></h2>
+                <?php 
+if ($row["discount_price"] ==0) {
+  echo '<span class="price">$'.$row["price"].' </span>';
+}else{
+  echo '<del class="price">$'.$row["price"].' </del>';
+  echo '<span class="price">New Price $'.$row["discount_price"].' </span>';
+}
+?>
 
-                <span class="price">$<?php echo $row["price"] ?></span>
 
 
                 <p class="products-desc"><?php echo $row["description"] ?></p>

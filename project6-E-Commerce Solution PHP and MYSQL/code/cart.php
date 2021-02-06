@@ -99,7 +99,7 @@ if (!isset($_SESSION["cart"]) || empty($_SESSION["cart"])) {
               </table>
             </div>
           </div>
-          <a href="actions/order.php" class="btn-add-to-cart">Proceed To Checkout</a>
+          <a href="actions/order.php" class="btn-add-to-cart">Checkout</a>
         </div>
       </div>
     </div>
