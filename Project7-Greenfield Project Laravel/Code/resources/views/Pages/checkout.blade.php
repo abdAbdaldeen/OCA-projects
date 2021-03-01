@@ -7,7 +7,7 @@
 			<div class="col-12">
 				<div class="breadcrumb_inner">
 					<ul>
-						<li><a href="/">Home</a></li>
+						<li><a href="{{asset("/")}}">Home</a></li>
 						<li><i class="zmdi zmdi-chevron-right"></i></li>
 						<li>Checkout</li>
 					</ul>
@@ -102,19 +102,15 @@
 											{{$item["product"]->name}} <strong class="product-quantity"> × {{$item["qty"]}}</strong>
 										</td>
 										<td class="product-total">
-											<span class="amount">${{$item["product"]->price * $item["qty"]}}</span>
+											<span class="amount">{{$item["product"]->price * $item["qty"]}} JOD</span>
 										</td>
 									</tr>
 									@endforeach
 								</tbody>
 								<tfoot>
-									<tr class="cart-subtotal">
-										<th>Cart Subtotal</th>
-										<td><span class="amount">${{$total}}</span></td>
-									</tr>
 									<tr class="order-total">
 										<th>Order Total</th>
-										<td><strong><span class="amount">${{$total}}</span></strong>
+										<td><strong><span class="amount">{{$total}} JOD</span></strong>
 										</td>
 									</tr>
 								</tfoot>
@@ -132,7 +128,8 @@
 
 								</div>
 								<div class="order-button-payment">
-									<a href="my-account"> <input type="submit" value="Place order" /></a>
+									<a href="my-account"> <input style="background-color: #f6563c;" type="submit"
+											value="Place order" /></a>
 								</div>
 							</div>
 						</div>

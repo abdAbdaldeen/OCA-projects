@@ -2,7 +2,7 @@
 
 @section('contant')
 <!-- slider-area-start -->
-<div class="slider_wrapper">
+<div class="slider_wrapper" id="upHome">
 	<div class="slider-active owl-carousel">
 		<!--Single Slide-->
 		<div class="single__slider bg-opacity" style="background-image:url(assets/img/slide/1.jpg)">
@@ -13,7 +13,7 @@
 							<h1>Best Deal</h1>
 							<h2>15% - 25% Off</h2>
 							<p>Don't miss the chance to get the best bike for the best price. </p>
-							<a href="shop">Buy Now</a>
+							<a href="shop" class="btn-slider">Buy Now</a>
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-6">
@@ -54,7 +54,8 @@
 						<div class="slider-content slider-text-animation">
 							<h1>Best Deal</h1>
 							<h2>15% - 25% Off</h2>
-							<p>Simply dummy text of the printing and typesetting. </p>
+							<p>Don't miss the chance to get the best bike for the best price. </p>
+
 							<a href="shop">Buy Now</a>
 						</div>
 					</div>
@@ -71,7 +72,7 @@
 </div>
 <!-- slider-area-end -->
 <!--Banner area start-->
-<div class="hot_details_product pt-70 pb-70">
+<div class="hot_details_product pt-70 pb-40" id="category">
 	<div class="banner_area">
 		<div class="banner_area_inner d-flex">
 			@foreach ($Categories as $Category)
@@ -88,7 +89,7 @@
 
 
 <!--Hot Deal product start-->
-<div class="hot_details_product pt-70 pb-70">
+<div class="hot_details_product pt-40 pb-70" id="hotProduct">
 	<div class="container">
 		<div class="row align-items-end">
 			<div class="col-lg-3 col-md-3 col-12">
@@ -105,19 +106,22 @@
 						<div class="row">
 							@foreach ($DiscountProducts as $Product)
 							<div class="col-lg-4 col-md-6">
-								<div class="single__product" style="height: 21rem;">
+								<div class="single__product" style="height: 22rem;">
 									<div class="produc_thumb">
 										<a href="product/{{$Product['id']}}"><img src="{{asset("images/".$Product->image)}}" alt=""></a>
 									</div>
 									<div class="product_hover">
 										<div class="product__desc">
+											<div class="price_amount">
+												<span class="discount_price discount_index">- {{$Product->discount}} %</span>
+											</div>
 											<h3><a href="product/{{$Product['id']}}">{{$Product->name}}</a></h3>
 											<div class="price_amount">
 												<span class="current_price">
-													{{($Product->price)-(($Product->discount/100)*($Product->price))}}JOD</span>
-												<span class="discount_price">-{{$Product->discount}}%</span>
-												<span class="old_price">{{$Product->price}}JOD</span>
+													{{($Product->price)-(($Product->discount/100)*($Product->price))}} JOD</span>
+												<span class="old_price">{{$Product->price}} JOD</span>
 											</div>
+											<a href="product/{{$Product['id']}}" class="btn btn_show">Show</a>
 										</div>
 									</div>
 								</div>
@@ -130,12 +134,14 @@
 			</div>
 			<div class="col-lg-3 col-md-12">
 				<div class="single_banner long_hot_detals d-lg-none">
-					<a href="#"><img
-							src="https://play-lh.googleusercontent.com/DgvydFCvBi_gi80FUS1U923lVDc1jzxXts7jJ0h3SIg1ZOeFhmZ20jdX3pNW0k-Rawse"
-							alt="Shop Banner"></a>
+					<a href="#"><img src="https://pbs.twimg.com/media/EtxzAMUXMAEKhJA.jpg" alt="Shop Banner"></a>
 				</div>
-				<div class="single_banner long_hot_detals d-none d-lg-block">
-					<a href="#"><img src="https://img.utdstc.com/screen/13/opensooq-016.jpg:200" alt="Shop Banner"></a>
+				<div class="single_banner long_hot_detals d-none d-lg-block divImageOrange">
+					<a href="#"><img src="images/orange.jpg" class="imageOrange" alt="Shop Banner"></a>
+				</div>
+				<div class="single_banner long_hot_detals d-none d-lg-block pt-20">
+					<a href="#"><img src="https://www.orange.com/sites/orangecom/files/2020-10/UK_OM_480X270_07-.png"
+							alt="Shop Banner"></a>
 				</div>
 			</div>
 		</div>
@@ -146,7 +152,7 @@
 
 <!--Hot Deal product start-->
 <div class="hot_details_product">
-	<div class="container">
+	<div class="container" id="bestProduct">
 		<div class="row align-items-end">
 			<div class="col-lg-3 col-md-3 col-12">
 				<div class="section_title">
@@ -161,17 +167,22 @@
 						<div class="row carousel_product owl-carousel">
 							@foreach ($HotProducts as $Product)
 							<div class="col-lg-4 col-md-6">
-								<div class="single__product">
+								<div class="single__product" style="height: 22rem;">
 									<div class="produc_thumb">
 										<a href="product/{{$Product['id']}}"><img src="{{asset("images/".$Product->image)}}" alt=""></a>
-										<div class="product_hover">
-											<div class="product__desc">
-												<h3>
-													<a href="product/{{$Product['id']}}">{{$Product->name}}</a></h3>
-												<div class="price_amount">
-													<span class="current_price">{{$Product->price}}JOD</span>
-												</div>
-											</div>
+									</div>
+									<div class="product_hover">
+										<div class="price_amount">
+											<h3><a href="product/{{$Product['id']}}">{{$Product->name}}</a></h3>
+											@if ($Product->discount != 0)
+											<span class="discount_price dis_HotProducts">-{{$Product->discount}} %</span>
+											<span class="current_price">{{$Product->price - (($Product->discount * $Product->price)/100)}}
+												JOD</span>
+											<span class="old_price">{{$Product->price}} JOD</span>
+											@else
+											<span class="current_price">{{$Product->price}} JOD</span>
+											@endif
+											<a href="product/{{$Product['id']}}" class="btn btn_show">Show</a>
 										</div>
 									</div>
 								</div>
@@ -193,5 +204,5 @@
 		</div>
 	</div>
 	<!--Full Width Banner end-->
-
-	@endsection
+</div>
+@endsection

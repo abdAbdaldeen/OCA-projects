@@ -171,7 +171,7 @@ if ($conn->query($sql) === TRUE) {
                       <div class="form-group has-success">
                         <label for="description" class="control-label mb-1">Description</label>
                         <textarea class="form-control" id="description" name="description"
-                          rows="4"><?php echo $olddata["price"]?></textarea>
+                          rows="4"><?php echo $olddata["description"]?></textarea>
                       </div>
                       <div>
                         <button name="update" type="submit" class="btn btn-lg btn-primary btn-block">

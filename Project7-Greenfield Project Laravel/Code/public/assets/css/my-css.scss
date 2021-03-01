@@ -63,3 +63,136 @@ th{
 .team__hover__action > h2 {
 font-size: 15px;
 }
+// ==============
+.cart-table table tbody tr td.pro-thumbnail a img {
+  max-width: 70px !important;
+}
+// ============
+.administrator{
+  align-items: center;
+}
+// =================
+// ---------------
+.produc_thumb {
+  text-align: center;
+}
+
+
+.team__thumb a img {
+ -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  height: 14rem;
+  border-radius: 0.6rem;
+  border: 4px #b9181b inset;
+}
+.team__hover__action > h2 {
+font-size: 15px;
+}
+
+.slider-content>a {
+  background-color: #ed2124 !important;
+}
+.slider-content>a:hover {
+    background-color: black !important;
+}
+.current_price{
+      font-size: 23px !important;
+      padding: 6px;
+      margin-bottom: 0.2em;
+}
+.price_amount span.discount_price {
+    font-size: 1.4em;
+    padding: 0.4em;
+}
+  .single__product{
+        height: 25rem !important;
+  }
+  // .imageOrange{
+  //   height: 50rem !important;
+  // }
+//   .divImageOrange {
+// height: 50rem !important;
+//   }
+  .product__desc h3 {
+    font-size: 18px;
+    margin-top: 19px;
+  }
+  .btn_show{
+       color: white;
+       padding-top: 3px;
+       background-color: #ed2124;
+       width: 100%;
+       height: 2.5rem;
+       font-size: 1.2em;
+       border-radius: 10px;
+       font-weight: bold;
+  }
+   .btn_show:hover {
+     background-color: #9b1113;
+     color: white;
+   }
+   .btnCard {
+            background-color: #ed2124;
+            margin-left: 0.5rem;
+            border-radius: 6px;
+            height: 43px;
+            color: white;
+            font-weight: bolder;
+            width: 27vw;
+   }
+   .discount_index {
+         position: relative;
+         bottom: 11rem;
+         right: 2rem;
+   }
+   .btnCard:hover {
+       background-color: #b91518;
+     
+   }
+   .product-details-content>p {
+     text-align: justify;
+   }
+   .dis_HotProducts{
+      position: relative;
+      bottom: 16rem;
+      right: 2rem;
+   }
+  
+   .subtable td,
+   .subtable {
+       color: white !important;
+       background-color: #f6563c;
+      }
+
+      html{
+        scroll-behavior: smooth;
+      }
+
+      // ===========
+      .image-cropper {
+        width: 70px;
+        height: 70px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        img {
+          display: inline;
+          margin: 0 auto;
+          height: 100%;
+          width: auto;
+        }
+      }
+      
+     .myHr{
+       hr{
+         margin: 20px;
+       }
+     }
+    //  ============
+.blogImg{
+  height: 250px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}

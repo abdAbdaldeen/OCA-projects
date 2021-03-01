@@ -31,8 +31,9 @@
     <!-- ============================================================== -->
     <div class="dashboard-header">
       <nav class="navbar navbar-expand-lg bg-white fixed-top">
-        <a class="navbar-brand" href="{{asset('/')}}"><img src="{{asset('/assets/img/logo/logo-2.png')}}" width="100px" alt="exporso logo"></a>
-        
+        <a class="navbar-brand" href="{{asset('/')}}"><img src="{{asset('/assets/img/logo/logo-2.png')}}" width="100px"
+            alt="exporso logo"></a>
+
       </nav>
     </div>
     <!-- ============================================================== -->
@@ -54,26 +55,37 @@
               <li class="nav-divider">
                 Menu
               </li>
-
               <li class="nav-item ">
-                <a class="nav-link" href="{{asset('/admin')}}"><i class="fa fa-fw fa-user-circle"></i>Manage Admin </a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="{{asset('/admin/Customer')}}"><i class="fa fa-fw fa-user"></i>Manage Customer
+                <a class="nav-link {{ (request()->segment(2) == 'orders') ? 'active' : '' }}"
+                  href="{{asset('/admin/orders')}}"><i class="fas fa-fw fa-file"></i>Manage Orders
                 </a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link" href="{{asset('/admin/category')}}"><i class="fas fa-fw fa-chart-pie"></i>Manage
+                <a class="nav-link {{ (request()->segment(2) == 'blogs') ? 'active' : '' }}"
+                  href="{{asset('/admin/blogs')}}"><i class="fab fa-blogger"></i>Manage Blogs
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link {{ (request()->segment(2) == 'admin') ? 'active' : '' }}"
+                  href="{{asset('/admin/admin')}}"><i class="fa fa-fw fa-user-circle"></i>Manage Admin
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link {{ (request()->segment(2) == 'Customer') ? 'active' : '' }}"
+                  href="{{asset('/admin/Customer')}}"><i class="fa fa-fw fa-user"></i>Manage Customer
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link {{ (request()->segment(2) == 'category') ? 'active' : '' }}"
+                  href="{{asset('/admin/category')}}"><i class="fas fa-fw fa-chart-pie"></i>Manage
                   Category </a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link" href="{{asset('/admin/products')}}"><i class="fas fa-fw fa-file"></i>Manage Product
+                <a class="nav-link {{ (request()->segment(2) == 'products') ? 'active' : '' }}"
+                  href="{{asset('/admin/products')}}"><i class="fas fa-box"></i>Manage Product
                 </a>
               </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="{{asset('/admin/orders')}}"><i class="fas fa-fw fa-file"></i>Manage Orders
-                </a>
-              </li>
+
             </ul>
           </div>
         </nav>

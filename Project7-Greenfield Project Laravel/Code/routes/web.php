@@ -16,13 +16,16 @@ use Illuminate\Support\Facades\Route;
 // Route::redirect('/', '/admin');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['isLogin', 'customAuth']], function () {
-    Route::redirect('/', '/admin/admin');
+    Route::redirect('/', '/admin/orders');
     Route::resource('admin', 'AdminController');
     Route::resource('category', 'CategoryController');
     Route::resource('products', 'ProductsController');
     Route::resource('Customer', 'CustomerController');
     Route::get('orders', 'OrdersController@index');
     Route::get('orders/{id}/{status}', 'OrdersController@changeStatus');
+    Route::get('blogs', 'BlogController@adminIndex');
+    Route::get('blogs/view/{id}', 'BlogController@view');
+    Route::get('blogs/{id}/{status}', 'BlogController@changeStatus');
 });
 
 // ======================
@@ -50,10 +53,8 @@ Route::post('/addToCart', 'cartController@addToCart');
 Route::post('/update', 'cartController@update');
 Route::get('cart', 'cartController@index');
 Route::get('cart/delete/{id}', 'cartController@delete');
-Route::get('checkout', 'cartController@Checkout');
-Route::post('checkout', 'OrdersController@store');
-// =========================
-Route::get('test', 'OrdersController@index');
+Route::get('checkout', 'cartController@Checkout')->middleware('isLogin');
+Route::post('checkout', 'OrdersController@store')->middleware('isLogin');
 
 // =========================
 
@@ -86,7 +87,3 @@ Route::post('blog/search', "BlogController@search");
 
 Route::get('blog/{id}', "BlogController@blogDetails");
 // ===================
-Route::get('test', function () {
-    return view('test');
-});
-Route::post('test', "AdminController@test");

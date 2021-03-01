@@ -19,7 +19,7 @@
 </div>
 <!--Breadcrumb section end-->
 <!-- accont area start -->
-<div class="account_area ptb-100">
+<div class="account_area ptb-70">
     <div class="container">
         <div class="row">
             <!--login area start-->

@@ -8,7 +8,7 @@
             <div class="col-12">
                 <div class="breadcrumb_inner">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="{{asset("/")}}">Home</a></li>
                         <li><i class="zmdi zmdi-chevron-right"></i></li>
                         <li>About us</li>
                     </ul>

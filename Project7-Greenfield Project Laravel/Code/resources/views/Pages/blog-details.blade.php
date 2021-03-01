@@ -7,9 +7,9 @@
 			<div class="col-12">
 				<div class="breadcrumb_inner">
 					<ul>
-						<li><a href="#">Home</a></li>
+						<li><a href="{{asset("/")}}">Home</a></li>
 						<li><i class="zmdi zmdi-chevron-right"></i></li>
-						<li><a href="blog.html">blog</a></li>
+						<li><a href="{{asset("/blog")}}">blog</a></li>
 						<li><i class="zmdi zmdi-chevron-right"></i></li>
 						<li>{{$blog->heading}}</li>
 					</ul>
@@ -26,7 +26,7 @@
 <div class="our_blog_area single_blog right_sidebar ptb-100">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-8 col-md-12 col-12">
+			<div class="col-lg-9 col-md-12 col-12">
 				<div class="post_details_inner">
 					<div class="single_post_thumbnail">
 						<img src="{{asset('images/'.$blog->image)}}" alt="{{$blog->heading}}">
@@ -47,7 +47,7 @@
 						</div>
 
 						<div class="post_excerpt">
-                            <?php
+							<?php
                             echo str_replace("&nbsp;"," ",$blog->body);
 
                             ?>
@@ -70,35 +70,36 @@
 
 					<!--Comment box -->
 					<div class="comment_box_form mt-80">
-                        <div class="group-title">
-                            <h2>comments</h2>
-                        </div>
-                        @foreach ($comments as $comment)
-                            <div class="d-flex mt-5">
-                                <div>
-                                    <img width="60px" src="{{asset("images/{$comment->image}")}}">
-                                </div>
-                                <div class="administrator_contnet">
-                                    <h4>{{ $comment->name }}</h4>
-                                    <p>{{ $comment->comment }}</p>
-                                </div>
-                            </div>
-                            <hr>
-                        @endforeach
+						<div class="group-title">
+							<h2>comments</h2>
+						</div>
+						@foreach ($comments as $comment)
+						<div class="d-flex mt-5">
+							<div class="image-cropper">
+								<img src="{{asset("images/{$comment->image}")}}" class="rounded" />
+							</div>
+
+							<div class="administrator_contnet">
+								<h4>{{ $comment->name }}</h4>
+								<p>{{ $comment->comment }}</p>
+							</div>
+						</div>
+						<hr>
+						@endforeach
 						<div class="comment_box_title">
 							<h3>Leave A Comment</h3>
 						</div>
 						<div class="leave_comment_form">
 							<form action="{{asset("blog/addComment")}}" method="post">
-                                @csrf
+								@csrf
 								<div class="text-areabox">
 									<textarea placeholder="Type Your Comment *" name="comment"></textarea>
-                                    @if ($errors->has('comment'))
-                                        <div class="alert alert-danger">{{ $errors->first('comment') }}</div>
-                                    @endif
-                                </div>
+									@if ($errors->has('comment'))
+									<div class="alert alert-danger">{{ $errors->first('comment') }}</div>
+									@endif
+								</div>
 								<div class="submit_button_inner">
-                                    <input type="hidden" name="id" value="{{$blog->id}}">
+									<input type="hidden" name="id" value="{{$blog->id}}">
 									<button type="submit">Submit Comment</button>
 								</div>
 							</form>
@@ -108,7 +109,7 @@
 
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-8 col-12">
+			<div class="col-lg-3 col-md-8 col-12">
 				<div class="sidebar_right">
 
 					<div class="sidebar_widget banner mb-65">
@@ -118,8 +119,8 @@
 						<div class="sidebar_search">
 							<div class="search_form">
 								<form action="{{asset("blog/search")}}" method="post">
-                                    @csrf
-									<input type="text" name="search" placeholder="Search"/>
+									@csrf
+									<input type="text" name="search" placeholder="Search" />
 									<button type="submit"><i class="zmdi zmdi-search"></i></button>
 								</form>
 							</div>
@@ -131,9 +132,9 @@
 							<div class="single_banner">
 								<a href="#"><img src="{{asset('assets/img/banner/5.jpg')}}" alt=""></a>
 							</div>
-                            <br>
-                            <div class="single_banner">
-								<a href="#"><img src="https://www.orange.jo/EN/PublishingImages/new_home/sliders/offer_slider4.png" ></a>
+							<br>
+							<div class="single_banner">
+								<a href="#"><img src="https://www.orange.jo/EN/PublishingImages/new_home/sliders/offer_slider4.png"></a>
 							</div>
 						</div>
 					</div>

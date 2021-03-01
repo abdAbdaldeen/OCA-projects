@@ -12,8 +12,9 @@ class ShowPublicController extends Controller
     public function index()
     {
         $Categories = Category::all();
-        $DiscountProducts = Product::where('discount', '!=', '0')->get();
-        $HotProducts = Product::limit(3)->get();
+        $DiscountProducts = Product::where('discount', '!=', '0')->limit(6)->
+            orderBy("discount", "desc")->get();
+        $HotProducts = Product::limit(5)->get();
         return view('Pages.index', compact('DiscountProducts', 'Categories', 'HotProducts'));
     }
     public function shop()
@@ -48,17 +49,17 @@ class ShowPublicController extends Controller
             ->where("id", "!=", $id)
             ->get();
         // dd($relatedProducts);
-        $averageRate=0;
-        if (count($reviews)){
+        $averageRate = 0;
+        if (count($reviews)) {
 
-        $total=0;
+            $total = 0;
 
-        foreach ($reviews as $review){
-            $total+=$review->rate;
+            foreach ($reviews as $review) {
+                $total += $review->rate;
+            }
+            $averageRate = round($total / count($reviews));
         }
-        $averageRate = round($total/count($reviews));
-        }
-        return view('Pages.product', compact('Product', 'reviews', "relatedProducts","averageRate"));
+        return view('Pages.product', compact('Product', 'reviews', "relatedProducts", "averageRate"));
     }
 
     public function search(Request $request)
@@ -66,7 +67,8 @@ class ShowPublicController extends Controller
         $search = $request->input('search');
         $Products = Product::query()
             ->where('name', 'LIKE', "%{$search}%")
-            ->get();
+            ->orWhere('description', 'LIKE', "%{$search}%")
+            ->paginate(9);
         $Categories = Category::select('id', 'name')->get();
         return view('Pages.shop', compact('Products', 'Categories'));
     }

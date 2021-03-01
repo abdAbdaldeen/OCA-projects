@@ -5,8 +5,9 @@
   <div class="container-fluid">
     <div class="row m-t-30">
       <div class="col-md-12">
+        <h1>Manage Orders</h1>
         <!-- DATA TABLE-->
-        <div class="table-responsive m-b-40">
+        <div class="table-responsive m-b-40 " style="background-color:rgba(255, 255, 255, 0.658);">
           <table class="table table-borderless table-data3">
             <thead>
               <tr>
@@ -40,7 +41,7 @@
               <tr>
                 <td colspan="6">
 
-                  <table class="table table-borderless table-data3">
+                  <table class="table table-borderless table-data3" style="background-color:rgba(150, 151, 253, 0.5);">
                     <tr>
                       <th>Product ID</th>
                       <th>Quantity</th>
@@ -67,7 +68,6 @@
   function statusChange (id){
     var e = document.getElementById(id);
     var status = e.value;
-    alert(status)
     document.location.href = `/admin/orders/${id}/${status}`;
   }
   //   $('#status').on('change', function() {

@@ -118,7 +118,7 @@ include "includes/pageProtection.php";
 
                         <th>name</th>
                         <th>Img</th>
-                        <th>description</th>
+                        <!-- <th>description</th> -->
                         <th>Update</th>
                         <th>Delete</th>
                       </tr>
@@ -129,8 +129,9 @@ include "includes/pageProtection.php";
                       $sql = "SELECT * FROM categories";
                       $result = mysqli_query($conn, $sql);
                       while($row = mysqli_fetch_assoc($result)) {
-                      echo "<tr><td>".$row["name"]."</td><td><img src='../images/".$row["img_name"]."'></td><td><p>".$row["description"]."</p></td><td><a class='btn btn-info' href='actions/category/update.php?id={$row['categorie_id']}'>Update</a></td><td><a class='btn btn-danger' href='actions/category/delete.php?id={$row['categorie_id']}'>delete</a></td></tr>";
+                      echo "<tr><td>".$row["name"]."</td><td><img src='../images/".$row["img_name"]."'></td><td><a class='btn btn-info' href='actions/category/update.php?id={$row['categorie_id']}'>Update</a></td><td><a class='btn btn-danger' href='actions/category/delete.php?id={$row['categorie_id']}'>delete</a></td></tr>";
                       }
+                      // <td><p>".$row["description"]."</p></td>
                       CloseCon($conn);
                       ?>
                     </tbody>

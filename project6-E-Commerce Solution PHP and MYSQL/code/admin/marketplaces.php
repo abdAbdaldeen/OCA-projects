@@ -135,7 +135,7 @@ include "includes/pageProtection.php";
                         <th>name</th>
                         <th>Img</th>
                         <th>category</th>
-                        <th>description</th>
+                        <!-- <th>description</th> -->
                         <th>Update</th>
                         <th>Delete</th>
                       </tr>
@@ -150,8 +150,9 @@ include "includes/pageProtection.php";
                       $result2 = mysqli_query($conn, $sql2);
                       $categorie_name = mysqli_fetch_assoc($result2);
                       // ==================
-                      echo "<tr><td>".$row["name"]."</td><td><img src='../images/".$row["img_name"]."'></td><td>".$categorie_name["name"]."</td><td><p>".$row["description"]."</p></td><td><a class='btn btn-info' href='actions/marketplaces/update.php?id={$row['Marketplace_id']}'>Update</a></td><td><a class='btn btn-danger' href='actions/marketplaces/delete.php?id={$row['Marketplace_id']}'>delete</a></td></tr>";
+                      echo "<tr><td>".$row["name"]."</td><td><img src='../images/".$row["img_name"]."'></td><td>".$categorie_name["name"]."</td><td><a class='btn btn-info' href='actions/marketplaces/update.php?id={$row['Marketplace_id']}'>Update</a></td><td><a class='btn btn-danger' href='actions/marketplaces/delete.php?id={$row['Marketplace_id']}'>delete</a></td></tr>";
                       }
+                      // <td><p>".$row["description"]."</p></td>
                       CloseCon($conn);
                       ?>
                     </tbody>

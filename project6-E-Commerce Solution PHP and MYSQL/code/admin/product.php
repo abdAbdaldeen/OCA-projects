@@ -152,7 +152,7 @@ include "includes/pageProtection.php";
                         <th>Price</th>
                         <th>Discount Price</th>
                         <th>marketplace</th>
-                        <th>description</th>
+                        <!-- <th>description</th> -->
                         <th>Update</th>
                         <th>Delete</th>
                       </tr>
@@ -176,8 +176,9 @@ include "includes/pageProtection.php";
                            else  echo "$" . $row["discount_price"];
                           echo"</td>
                           <td>".$MarketplaceName["name"]."</td>
-														<td><p>".$row["description"]."</p></td><td><a class='btn btn-info' href='actions/product/update.php?id={$row['product_id']}'>Update</a></td><td><a class='btn btn-danger' href='actions/product/delete.php?id={$row['product_id']}'>delete</a></td></tr>";
+														<td><a class='btn btn-info' href='actions/product/update.php?id={$row['product_id']}'>Update</a></td><td><a class='btn btn-danger' href='actions/product/delete.php?id={$row['product_id']}'>delete</a></td></tr>";
 												}
+                        // <td><p>".$row["description"]."</p></td>
 												CloseCon($conn);
 											?>
                     </tbody>

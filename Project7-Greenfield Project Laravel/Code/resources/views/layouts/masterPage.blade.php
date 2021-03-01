@@ -185,9 +185,10 @@
       <div class="footer_bottom ptb-80">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-4 col-md-6">
               <div class="single_footer widget_description">
-                <p>Exporso is a company started by five people in Amman-jordan it's about giving the customer the best bike for the best price.</p>
+                <p>Exporso is a company started by five people in Amman-jordan it's about giving the customer the best
+                  bike for the best price.</p>
                 <p>Love Power Passion Exporso.</p>
                 <div class="addresses_inner">
                   <div class="single_address">
@@ -219,7 +220,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-4 col-md-6">
               <div class="single_footer footer_widget_menu">
                 <div class="widget_title">
                   <h3>Page</h3>
@@ -228,9 +229,20 @@
                   <li><a href="{{asset('index')}}">Home</a></li>
                   <li><a href="{{asset('about')}}">About</a></li>
                   <li><a href="{{asset('shop')}}">Shop </a></li>
-                  <li><a href="{{asset('login')}}">Login </a></li>
-                  <li><a href="{{asset('my-account')}}">My Account </a></li>
-                  <li><a href="{{asset('contact')}}">CONTACT </a></li>
+                  <li><a href="{{asset('contact')}}">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="single_footer footer_widget_menu">
+                <div class="widget_title">
+                  <h3>Home</h3>
+                </div>
+                <ul>
+                  <li><a href="{{asset('index#upHome')}}">Landing Page</a></li>
+                  <li><a href="{{asset('index#hotProduct')}}">Hot Product</a></li>
+                  <li><a href="{{asset('index#bestProduct')}}">Best Product</a></li>
+                  <li><a href="{{asset('index#category')}}">Category</a></li>
                 </ul>
               </div>
             </div>

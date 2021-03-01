@@ -22,11 +22,18 @@ $conn = OpenCon();
                 <div class="shopping-option-item">
                   <h4>MANUFACTURER</h4>
                   <ul class="sidebar-list">
+                    <li><a href="?">All Products</a></li>
                     <?php 
                     $sql = 'SELECT categorie_id, name FROM categories';
                     $result = mysqli_query($conn, $sql);
                     while($row = mysqli_fetch_assoc($result)) {
-                      echo '<li><a href="?category='.$row["categorie_id"].'">'.$row["name"].'</a></li>';
+                      echo '<li><a href="?category='.$row["categorie_id"].'">'.$row["name"].'</a><ul>';
+                      $sql2 = "SELECT name FROM marketplaces WHERE categorie_id={$row["categorie_id"]}";
+                    $result2 = mysqli_query($conn, $sql2);
+                    while($row2 = mysqli_fetch_assoc($result2)) {
+                      echo "<li>{$row2["name"]}</li>";
+                    }
+                      echo'</ul></li>';
                     }
                     ?>
 
@@ -96,32 +103,26 @@ if (isset($_GET["name"])) {
   if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
       echo '
-                <div class="col-lg-4 col-sm-6">
-                  <div class="single-product-item text-center">
-                    <figure class="product-thumb">
-                      <a href="single-product.php?id='.$row["product_id"].'"><img src="images/'.$row['img_name'].'" alt="Products" class="img-fluid" /></a>
+            <div class="col-lg-4 col-sm-6">
+              <div class="single-product-item text-center">
+                  <figure class="product-thumb">
+                    <a href="single-product.php?id='.$row["product_id"].'"><img src="images/'.$row['img_name'].'" alt="Products" class="img-fluid" /></a>
                     </figure>
-
                     <div class="product-details">
                       <h2>
                         <a href="single-product.php?id='.$row["product_id"].'">'.$row['name'].'</a>
                       </h2>';
-
                       if ($row["discount_price"] ==0) {
                         echo '<span class="price">$'.$row["price"].' </span>';
                       }else{
                         echo '<del class="price">$'.$row["price"].' </del>';
                         echo '<span class="price">New Price $'.$row["discount_price"].' </span>';
                       }
-
                       echo'<p class="products-desc">'.$row['description'].'</p>
-                    
                       <a href="single-product.php?id='.$row["product_id"].'" class="btn btn-add-to-cart">+ Add to Cart</a>
-                      </div>
-                  </div>
-
-                
-       </div>';
+                    </div>
+              </div>
+            </div>';
     }
   }
   else{

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2021 at 10:25 PM
+-- Generation Time: Mar 01, 2021 at 05:15 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -42,7 +42,8 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `password`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'a', 'a', 'default.png', NULL, NULL);
+(1, 'admin', 'admin@exporso.com', '123456', 'default.png', '2021-02-01 11:11:07', '2021-02-01 11:11:07'),
+(2, 'a', 'a', 'a', 'default.png', '2021-02-01 20:10:03', NULL);
 
 -- --------------------------------------------------------
 
@@ -55,6 +56,7 @@ CREATE TABLE `blogs` (
   `heading` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `body` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'default.png',
+  `state` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Pending',
   `customer_id` bigint(20) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -64,13 +66,12 @@ CREATE TABLE `blogs` (
 -- Dumping data for table `blogs`
 --
 
-INSERT INTO `blogs` (`id`, `heading`, `body`, `image`, `customer_id`, `created_at`, `updated_at`) VALUES
-(5, 'Froome racing to spoil Yates’s pink Giro dream', '<h2>Bike safety consultation shows someone in government might understand cycling.</h2>\r\n\r\n<p>Bicycles and life The bicycle was a truly exciting machine when it was first invented over a century ago; it was improved with every passing. A bike has many advantages- it is the most energy efficient form of transport on earth, it is healthy, non-polluting, economical and safe, but it&#39;s most unique, outstanding and enjoyable quality is that a bike is totally personal. The experience is unlike anything that you encounter while you are bicycling. Swooping around corners, the wind rushing</p>', '1614456406.jpg', 2, '2021-02-27 18:06:46', '2021-02-27 18:06:46'),
-(6, 'Bicycles and Automobiles', '<p>Bicycles have been a form of transportation for hundreds of years now. Although many people choose to drive automobiles rather than riding bicycles, there is still a sizeable amount of people who prefer riding bicycles. In addition, Cyclists have always ridden their bicycles on the road next to automobiles. However, many people believe that cyclists should have separate laws, while, on the other hand; other people believe that cyclists deserve to have the same laws as car drivers. According to Grant Petersen, bike commuting is up to 61.6 percent in the last thirteen years, but since the national average is still less than two percent, it is hard to make a strong case for revamping the laws to accommodate the significant upsurge. In spite of this, I agree that the laws and infrastructure should be altered to recognize the differences between bicycles and automobiles because it will improve the safety of cyclists, as well as vehicle drivers, and create a more diverse population inside our cities.</p>', '1614456455.jpg', 2, '2021-02-27 18:07:35', '2021-02-27 18:07:35'),
-(7, 'History of the bicycle', '<p>Biking today has risen to be a very good form of exercise but it is more than that people race both mountain bikes and road bikes around the world. Bikes have been included in both of the world wars and made a cheaper way for soldiers to travel farther distances than having to ride a horse. Bikes that could be rode without your feet touch the ground have been around since the 1860s. Since then great advancements have been made to them including easily adjustable gears and lighter materials to build them with such as aluminum, carbon fiber, and titanium. These are all things that make the bike a great revolutionary form of getting around with quickness and ease.<br />\r\nThe design of a bike originated from a device called the Draisienne. It was made in 1817 by Baron von Drais. He made this machine so he could get around his gardens faster. The machine was made completely of wood and had a bar that ran between two wheels. He would straddle the bar and push off the ground in order to move. The front-wheel was steerable so he could maneuver around the gardens.&nbsp;</p>', '1614456507.jpg', 2, '2021-02-27 18:08:27', '2021-02-27 18:08:27'),
-(8, 'Bicycle Critique', '<p>&nbsp;</p>\r\n\r\n<p>The most versatile bicycle is one with upright handlebars, slick (no huge knobs) medium-width tires, attachment points (braze-ons) for a rack and other accessories, and no shocks. This describes a popular segment of the bicycle market these days, &quot;urban bikes&quot;. My bike is like this, though back in the day it was purchased it was considered a mountain bike. Frame. It is important that a bike frame&#39;s geometry matches your body and your typical type of riding. Imagine a rubber frame: stretch the top if you have a long torso, shrink the bottom (make the wheels closer) if you want quick handling; stretch the bottom if you want a smoother, more stable ride for touring.</p>', '1614456558.jpg', 2, '2021-02-27 18:09:18', '2021-02-27 18:09:18'),
-(9, 'Cycling As A Bicycle', '<p>Cycling is a low-cost, effective mode of transportation that is quiet, energy efficient, versatile, provides physical activity, produces no pollution, reduces greenhouse gas emission, helps improve climate change, improves air quality and overall traffic management, supports sustainable development, provides convenient transport, offers alternatives to driving on congested roadways, supports social interaction and can be fun. As a vehicle, a bike consumes no fossil fuels and produces no greenhouse emissions, whilst providing an alternative to private automobile in ensuring mobility of people and light goods.<br />\r\n<br />\r\nBicycles are efficient in their use of public space and supporting healthy lifestyles, making communities better place to live. Additionally, they are cheap to acquire and maintain, and are dependable. Bikes are flexible vehicles that can operate in a wide variety of settings and environments. Like every <a href=\"https://www.123helpme.com/topics/mode-of-transport\">mode of transport</a>, the <a href=\"https://www.123helpme.com/topics/bicycle\">bicycle</a> has a specific role to play based on its capacities and operating characteristics. Bicycles are consistently regarded as a viable alternative to the automobile for short personal trips and are an important component of the transportation systems of many cities and communities around the world.</p>', '1614456589.jpg', 2, '2021-02-27 18:09:49', '2021-02-27 18:09:49'),
-(10, 'Bicycle Pump', '<p>Top 10 Bicycle Tire Pump in 2018<br />\r\nIf there is one thing that you should never do when cycling is to leave your home without a bicycle tire pump. Imagine having a flat tire, and you do not have a bicycle pump and repair kit on hand. You will be hauling a heavy load home as pushing the bike is not easy.<br />\r\nThe fantastic thing is a bike pump is a handy device you can use to pump up more than just a flat tire. You can even use it to inflate from a soccer ball to basketball. The handy tool is a necessity to carry around with you anywhere.<br />\r\nIf you are ready to buy a <a href=\"https://www.123helpme.com/topics/bicycle\">bicycle</a> tire pump, look at our 2018-reviewed list here and find one suitable to fit in with your budget. You will not be disappointed and will thank us in the end.<br />\r\nBest Bike Tire Pump<br />\r\n10. Poshei<em>&hellip;show more content&hellip;</em><br />\r\nCanway Bike Pump<br />\r\nWho wants to haul around a massive bicycle tire pump while cycling? We are sure of it that you want a lightweight and portable bicycle pump to carry. Here we have the Canway with a lightweight and compact design with twin valves to solve any flat tire problem. The tool offers you a 160psi for pumping up road and mountain bike tires.<br />\r\n&nbsp;</p>', '1614456647.jpg', 2, '2021-02-27 18:10:47', '2021-02-27 18:10:47');
+INSERT INTO `blogs` (`id`, `heading`, `body`, `image`, `state`, `customer_id`, `created_at`, `updated_at`) VALUES
+(3, 'History of the bicycle', '<p>Biking today has risen to be a very good form of exercise but it is more than that people race both mountain bikes and road bikes around the world. Bikes have been included in both of the world wars and made a cheaper way for soldiers to travel farther distances than having to ride a horse. Bikes that could be ridden without your feet touch the ground have been around since the 1860s. Since then great advancements have been made to them including easily adjustable gears and lighter materials to build them with such as aluminum, carbon fiber, and titanium. These are all things that make the bike a great revolutionary form of getting around with quickness and ease.<br />\r\nThe design of a bike originated from a device called the Draisienne. It was made in 1817 by Baron von Drais. He made this machine so he could get around his gardens faster. The machine was made completely of wood and had a bar that ran between two wheels. He would straddle the bar and push off the ground in order to move. The front-wheel was steerable so he could maneuver around the gardens.&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://upload.wikimedia.org/wikipedia/en/2/25/Velocipede_race_in_1868.png\" style=\"height:1036px; width:1559px\" /></p>\r\n\r\n<p>These are all things that make the bike a great revolutionary form of getting around with quickness and ease.<br />\r\nThe design of a bike originated from a device called the Draisienne. It was made in 1817 by Baron von Drais. He made this machine so he could get around his gardens faster. The machine was made completely of wood and had a bar that ran between two wheels. He would straddle the bar and push off the ground in order to move. The front-wheel was steerable so he could maneuver around the gardens.&nbsp;</p>', '1614534644.jpg', 'Approved', 2, '2021-02-28 15:50:44', '2021-02-28 18:11:03'),
+(6, 'Cycling As A Bicycle', '<p>1. INTRODUCTION<br />\r\nCycling is a low-cost, effective mode of transportation that is quiet, energy efficient, versatile, provides physical activity, produces no pollution, reduces greenhouse gas emission, helps improve climate change, improves air quality and overall traffic management, supports sustainable development, provides convenient transport, offers alternatives to driving on congested roadways, supports social interaction and can be fun. As a vehicle, a bike consumes no fossil fuels and produces no greenhouse emissions, whilst providing an alternative to private automobile in ensuring mobility of people and light goods.<br />\r\n<br />\r\nBicycles are efficient in their use of public space and supporting healthy lifestyles, making communities better place to live. Additionally, they are cheap to acquire and maintain, and are dependable. Bikes are flexible vehicles that can operate in a wide variety of settings and environments. Like every <a href=\"https://www.123helpme.com/topics/mode-of-transport\">mode of transport</a>, the <a href=\"https://www.123helpme.com/topics/bicycle\">bicycle</a> has a specific role to play based on its capacities and operating characteristics. Bicycles are consistently regarded as a viable alternative to the automobile for short personal trips and are an important component of the transportation systems of many cities and communities around the world.</p>\r\n\r\n<p><img alt=\"\" src=\"https://i.imgur.com/1SA1VCF.jpg\" style=\"height:2717px; width:4061px\" /></p>\r\n\r\n<p>To give an idea of the potential for bicycling to play a significant role in the transportation network, one can look to the Netherlands as an example. Perhaps more than anywhere in the world, <a href=\"https://www.123helpme.com/topics/cycling\">cycling</a> is synonymous with Dutch culture, and the bicycle is used for almost a quarter of all trips. In the capital city of Amsterdam, bicycles are used for close to 40% of trips. Similar bicycle mode splits of 30-40% are also realized in other northern European countries like Sweden and Denmark.<br />\r\n&nbsp;</p>', '1614535265.jpg', 'Approved', 2, '2021-02-28 16:01:05', '2021-02-28 16:13:27'),
+(7, 'Scoter vs Motorcycle', '<p>The most versatile bicycle is one with upright handlebars, slick (no huge knobs) medium-width tires, attachment points (braze-ons) for a rack and other accessories, and no shocks. This describes a popular segment of the bicycle market these days, &quot;urban bikes&quot;. My bike is like this, though back in the day it was purchased it was considered a mountain bike. Frame. It is important that a bike frame&#39;s geometry matches your body and your typical type of riding. Imagine a rubber frame: stretch the top if you have a long torso, shrink the bottom (make the wheels closer) if you want quick handling; stretch the bottom if you want a smoother, more stable ride for touring. If you are tall, and especially if your height is in your torso, there are several things you can do to make a bike fit without resorting to a custom frame. First, scoot your seat all the way back &ndash; but not so far back that your knee is not ___). Second, buy a longer stem; they come in sizes up to about 130 mm, though sometimes you can find a 140 mm or even 150 mm stem. Last, a narrow seat, straight (not angled back) bars, and raising the seat / lowering the bars can help increase the horizontal distance a bit more.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://striveme.com/img/gallery/YZF-R6.jpg\" style=\"height:800px; width:1200px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Most bike frames are aluminum now, not steel; occasionally exotic (expensive) materials like titanium and carbon fiber are used. Characteristics of each materials? ___ Folding frames with small 20&quot; wheels - travel bikes - are an interest of mine (particularly Bike Fridays or regular bikes sawed in half and joined again with S and S couplings [2]). I have never had the opportunity to try one, and I rarely travel, but they intrigue me because they can be stored in a regular Samsonite hard-sided suitcase (which turns into a trailer), a big ... ... middle of paper ... ...d water bottles. In general, I prefer plastic cages - they don&rsquo;t leave aluminum residue all over your bottles. Bell. An $8 Incredibell ding bell alerts pedestrians to your approach from the rear. Most people appreciate this. A Delta air horn will alert cars, or just irritate them; for the most part I don&rsquo;t bike around cars anymore anyway.</p>', '1614535589.jpg', 'Approved', 2, '2021-02-28 16:06:29', '2021-02-28 16:13:30'),
+(14, 'motorcycle', '<p>Lorem,&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&nbsp;Corporis&nbsp;nam&nbsp;asperiores&nbsp;beatae&nbsp;maiores&nbsp;dolorum&nbsp;error&nbsp;cum,&nbsp;ea&nbsp;suscipit&nbsp;aut&nbsp;ab&nbsp;sequi.&nbsp;Placeat&nbsp;nesciunt&nbsp;totam&nbsp;veritatis&nbsp;eaque&nbsp;quis&nbsp;illo!&nbsp;Vel,&nbsp;sint,&nbsp;temporibus&nbsp;tempora&nbsp;aperiam&nbsp;quae&nbsp;alias&nbsp;voluptas&nbsp;quia&nbsp;qui&nbsp;sed&nbsp;consectetur&nbsp;illo&nbsp;quidem&nbsp;voluptatum&nbsp;architecto&nbsp;eligendi!&nbsp;Eius&nbsp;molestias&nbsp;quo&nbsp;ea&nbsp;saepe&nbsp;odit&nbsp;temporibus&nbsp;quas&nbsp;voluptate&nbsp;amet&nbsp;officiis&nbsp;in&nbsp;itaque&nbsp;laboriosam,&nbsp;doloribus&nbsp;autem&nbsp;quod&nbsp;quidem&nbsp;porro&nbsp;sed&nbsp;quam&nbsp;veritatis.&nbsp;Placeat&nbsp;praesentium&nbsp;corporis&nbsp;ratione.&nbsp;Esse&nbsp;dignissimos&nbsp;error&nbsp;culpa&nbsp;aliquid&nbsp;officiis&nbsp;accusantium&nbsp;pariatur&nbsp;odit,&nbsp;dolore,&nbsp;officia&nbsp;voluptatem,&nbsp;fugiat&nbsp;omnis&nbsp;iure&nbsp;temporibus!&nbsp;Nostrum&nbsp;illum&nbsp;architecto&nbsp;ad&nbsp;magni&nbsp;repellat,&nbsp;ipsa&nbsp;quisquam&nbsp;quae&nbsp;nulla&nbsp;voluptatem&nbsp;asperiores&nbsp;nobis&nbsp;voluptates&nbsp;illo&nbsp;dicta&nbsp;itaque&nbsp;commodi&nbsp;tempora&nbsp;quas&nbsp;neque,&nbsp;hic&nbsp;temporibus&nbsp;sint&nbsp;placeat.&nbsp;Sunt&nbsp;est,&nbsp;vero&nbsp;dicta&nbsp;neque&nbsp;id&nbsp;natus&nbsp;rem&nbsp;amet&nbsp;perspiciatis&nbsp;atque&nbsp;veritatis&nbsp;consequuntur&nbsp;quos&nbsp;nostrum&nbsp;numquam&nbsp;fugiat&nbsp;ex&nbsp;cupiditate&nbsp;nesciunt&nbsp;iusto&nbsp;error&nbsp;vel&nbsp;perferendis&nbsp;libero&nbsp;ad?&nbsp;Nemo&nbsp;repellat&nbsp;libero,&nbsp;odit&nbsp;maxime&nbsp;recusandae&nbsp;nam?&nbsp;Quod&nbsp;architecto&nbsp;enim&nbsp;cum&nbsp;earum!&nbsp;Quos&nbsp;consectetur&nbsp;illum&nbsp;in&nbsp;perspiciatis&nbsp;voluptates&nbsp;saepe&nbsp;repellendus&nbsp;ducimus&nbsp;dolorem&nbsp;neque,&nbsp;earum&nbsp;porro&nbsp;officiis&nbsp;atque&nbsp;adipisci&nbsp;quisquam&nbsp;omnis&nbsp;odit&nbsp;fugit&nbsp;numquam&nbsp;quam&nbsp;nisi&nbsp;sed&nbsp;ratione&nbsp;quo&nbsp;sint.&nbsp;Placeat,&nbsp;dolores?&nbsp;Qui&nbsp;assumenda&nbsp;mollitia&nbsp;sit&nbsp;quaerat&nbsp;culpa&nbsp;nesciunt&nbsp;quasi&nbsp;suscipit&nbsp;rerum&nbsp;et&nbsp;cupiditate&nbsp;enim,&nbsp;accusamus&nbsp;distinctio&nbsp;soluta&nbsp;impedit&nbsp;voluptas,&nbsp;ea&nbsp;similique.&nbsp;Cumque.<br />\r\n&nbsp;</p>', '1614586278.jpg', 'Pending', 1, '2021-03-01 06:11:18', '2021-03-01 06:11:18'),
+(15, 'Motorcycle', '<p>Lorem,&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&nbsp;Corporis&nbsp;nam&nbsp;asperiores&nbsp;beatae&nbsp;maiores&nbsp;dolorum&nbsp;error&nbsp;cum,&nbsp;ea&nbsp;suscipit&nbsp;aut&nbsp;ab&nbsp;sequi.&nbsp;Placeat&nbsp;nesciunt&nbsp;totam&nbsp;veritatis&nbsp;eaque&nbsp;quis&nbsp;illo!&nbsp;Vel,&nbsp;sint,&nbsp;temporibus&nbsp;tempora&nbsp;aperiam&nbsp;quae&nbsp;alias&nbsp;voluptas&nbsp;quia&nbsp;qui&nbsp;sed&nbsp;consectetur&nbsp;illo&nbsp;quidem&nbsp;voluptatum&nbsp;architecto&nbsp;eligendi!&nbsp;Eius&nbsp;molestias&nbsp;quo&nbsp;ea&nbsp;saepe&nbsp;odit&nbsp;temporibus&nbsp;quas&nbsp;voluptate&nbsp;amet&nbsp;officiis&nbsp;in&nbsp;itaque&nbsp;laboriosam,&nbsp;doloribus&nbsp;autem&nbsp;quod&nbsp;quidem&nbsp;porro&nbsp;sed&nbsp;quam&nbsp;veritatis.&nbsp;Placeat&nbsp;praesentium&nbsp;corporis&nbsp;ratione.&nbsp;Esse&nbsp;dignissimos&nbsp;error&nbsp;culpa&nbsp;aliquid&nbsp;officiis&nbsp;accusantium&nbsp;pariatur&nbsp;odit,&nbsp;dolore,&nbsp;officia&nbsp;voluptatem,&nbsp;fugiat&nbsp;omnis&nbsp;iure&nbsp;temporibus!&nbsp;Nostrum&nbsp;illum&nbsp;architecto&nbsp;ad&nbsp;magni&nbsp;repellat,&nbsp;ipsa&nbsp;quisquam&nbsp;quae&nbsp;nulla&nbsp;voluptatem&nbsp;asperiores&nbsp;nobis&nbsp;voluptates&nbsp;illo&nbsp;dicta&nbsp;itaque&nbsp;commodi&nbsp;tempora&nbsp;quas&nbsp;neque,&nbsp;hic&nbsp;temporibus&nbsp;sint&nbsp;placeat.&nbsp;Sunt&nbsp;est,&nbsp;vero&nbsp;dicta&nbsp;neque&nbsp;id&nbsp;natus&nbsp;rem&nbsp;amet&nbsp;perspiciatis&nbsp;atque&nbsp;veritatis&nbsp;consequuntur&nbsp;quos&nbsp;nostrum&nbsp;numquam&nbsp;fugiat&nbsp;ex&nbsp;cupiditate&nbsp;nesciunt&nbsp;iusto&nbsp;error&nbsp;vel&nbsp;perferendis&nbsp;libero&nbsp;ad?&nbsp;Nemo&nbsp;repellat&nbsp;libero,&nbsp;odit&nbsp;maxime&nbsp;recusandae&nbsp;nam?&nbsp;Quod&nbsp;architecto&nbsp;enim&nbsp;cum&nbsp;earum!&nbsp;Quos&nbsp;consectetur&nbsp;illum&nbsp;in&nbsp;perspiciatis&nbsp;voluptates&nbsp;saepe&nbsp;repellendus&nbsp;ducimus&nbsp;dolorem&nbsp;neque,&nbsp;earum&nbsp;porro&nbsp;officiis&nbsp;atque&nbsp;adipisci&nbsp;quisquam&nbsp;omnis&nbsp;odit&nbsp;fugit&nbsp;numquam&nbsp;quam&nbsp;nisi&nbsp;sed&nbsp;ratione&nbsp;quo&nbsp;sint.&nbsp;Placeat,&nbsp;dolores?&nbsp;Qui&nbsp;assumenda&nbsp;mollitia&nbsp;sit&nbsp;quaerat&nbsp;culpa&nbsp;nesciunt&nbsp;quasi&nbsp;suscipit&nbsp;rerum&nbsp;et&nbsp;cupiditate&nbsp;enim,&nbsp;accusamus&nbsp;distinctio&nbsp;soluta&nbsp;impedit&nbsp;voluptas,&nbsp;ea&nbsp;similique.&nbsp;Cumque.<br />\r\n&nbsp;</p>', '1614598951.jpg', 'Approved', 6, '2021-03-01 09:42:31', '2021-03-01 09:43:45');
 
 -- --------------------------------------------------------
 
@@ -110,6 +111,16 @@ CREATE TABLE `comments` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `comment`, `customer_id`, `blog_id`, `created_at`, `updated_at`) VALUES
+(1, 'This helped me understand the history of bicycles.', 3, 3, '2021-02-28 16:14:37', '2021-02-28 16:14:37'),
+(2, 'That was an interesting topic thank you Exporso fan.', 4, 3, '2021-02-28 16:19:05', '2021-02-28 16:19:05'),
+(3, 'History of bicycle WOW I gained a lot of information Thank you.', 5, 3, '2021-02-28 16:32:08', '2021-02-28 16:32:08'),
+(8, 'Thank you.', 6, 3, '2021-03-01 09:42:04', '2021-03-01 09:42:04');
+
 -- --------------------------------------------------------
 
 --
@@ -132,8 +143,12 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `name`, `email`, `password`, `image`, `phone`, `created_at`, `updated_at`) VALUES
-(1, '123', 'j', 'j', 'default.png', '0777777777', '2021-02-27 13:55:39', '2021-02-27 13:56:44'),
-(2, 'mohammed', 'b', 'b', 'default.png', 'Add phone number', '2021-02-27 17:56:03', '2021-02-27 17:56:03');
+(1, 'b', 'b', 'b', 'default.png', '0777777777', '2021-02-01 11:17:20', '2021-02-28 17:46:17'),
+(2, 'Exporso Fans', 'fans@exporso.com', '123456', '1614534181.png', 'Add phone number', '2021-02-28 15:42:31', '2021-02-28 15:43:01'),
+(3, 'Ramzi Alqrainy', 'ramzi@gmail.com', '123456', '1614537357.jpg', 'Add phone number', '2021-02-28 16:08:57', '2021-02-28 16:36:15'),
+(4, 'Rana Dababneh', 'rana@gmail.com', '123456', '1614536494.jpg', 'Add phone number', '2021-02-28 16:15:44', '2021-02-28 16:21:34'),
+(5, 'Nicola Fanous', 'nicola@gmail.com', '123456', '1614536846.jpg', 'Add phone number', '2021-02-28 16:25:20', '2021-02-28 16:27:26'),
+(6, 'Abdel rahman Abdaldeen', 'ceo@exporso.com', '123456', '1614544640.jpg', '07777777777', '2021-02-28 18:06:52', '2021-02-28 18:37:20');
 
 -- --------------------------------------------------------
 
@@ -201,7 +216,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `customer_id`, `total_quantity`, `total_price`, `address`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 276.00, 'jjjj', 'Shiping', '2021-02-27 13:56:44', '2021-02-27 16:23:01');
+(6, 6, 5, 5752.00, 'Amman, Mecca St.', 'Processing', '2021-03-01 09:01:59', '2021-03-01 09:01:59'),
+(7, 6, 4, 11040.00, 'Amman, Mecca St.', 'Processing', '2021-03-01 09:41:04', '2021-03-01 09:41:04');
 
 -- --------------------------------------------------------
 
@@ -221,7 +237,14 @@ CREATE TABLE `order_products` (
 --
 
 INSERT INTO `order_products` (`id`, `product_id`, `order_id`, `quantity`) VALUES
-(1, 1, 1, 1.00);
+(1, 1, 1, 5.00),
+(2, 1, 2, 3.00),
+(3, 1, 3, 4.00),
+(4, 1, 4, 5.00),
+(5, 1, 5, 6.00),
+(6, 7, 6, 2.00),
+(7, 5, 6, 3.00),
+(8, 1, 7, 4.00);
 
 -- --------------------------------------------------------
 
@@ -280,7 +303,11 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`id`, `product_id`, `customer_id`, `comment`, `rate`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 'wooow', NULL, '2021-02-27 13:56:01', '2021-02-27 13:56:01');
+(1, 1, 3, 'I liked the blue color so much', 5, '2021-02-28 16:09:45', '2021-02-28 16:09:45'),
+(2, 1, 4, 'I bought one for my son and it was so fast.', 4, '2021-02-28 16:17:54', '2021-02-28 16:17:54'),
+(3, 1, 5, 'This too expensive can you make a discount for me.', 2, '2021-02-28 16:27:02', '2021-02-28 16:27:02'),
+(7, 1, 1, 'This is good product', 3, '2021-03-01 06:08:24', '2021-03-01 06:08:24'),
+(8, 1, 6, 'This is good product', 4, '2021-03-01 09:39:56', '2021-03-01 09:39:56');
 
 -- --------------------------------------------------------
 
@@ -386,13 +413,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -404,13 +431,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -428,13 +455,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `order_products`
 --
 ALTER TABLE `order_products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -446,7 +473,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`

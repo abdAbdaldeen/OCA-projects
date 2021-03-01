@@ -18,6 +18,7 @@ class CreateBlogsTable extends Migration
             $table->string('heading');
             $table->string('body', "65535");
             $table->string('image')->default("default.png");
+            $table->string('state')->default("Pending");
             $table->bigInteger('customer_id');
             $table->timestamps();
         });

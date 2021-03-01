@@ -8,7 +8,7 @@
       <div class="col-12">
         <div class="breadcrumb_inner">
           <ul>
-            <li><a href="/">Home</a></li>
+            <li><a href="{{asset("/")}}">Home</a></li>
             <li><i class="zmdi zmdi-chevron-right"></i></li>
             <li>Cart</li>
           </ul>
@@ -28,7 +28,7 @@
 
         <div class="col-12">
           <div class="cart-table table-responsive mb-40">
-            <table>
+            <table class="table table-striped">
               <thead>
                 <tr>
                   <th class="pro-thumbnail">Image</th>
@@ -45,12 +45,12 @@
                   <td class="pro-thumbnail"><a href="#"><img src="{{asset('images/'.$item["product"]->image)}}"
                         alt="" /></a></td>
                   <td class="pro-title"><a href="#">{{$item["product"]->name}}</a></td>
-                  <td class="pro-price"><span class="amount">${{$item["product"]->price}}</span></td>
+                  <td class="pro-price"><span class="amount">{{$item["product"]->price}} JOD</span></td>
                   <td class="pro-quantity">
                     <div class="product-quantity"><input type="number" value="{{$item["qty"]}}"
                         name="{{$item["product"]->id}}" /></div>
                   </td>
-                  <td class="pro-subtotal">${{$item["product"]->price * $item["qty"]}}</td>
+                  <td class="pro-subtotal">{{$item["product"]->price * $item["qty"]}} JOD</td>
                   <td class="pro-remove"><a href="{{asset('cart/delete/'.$item["product"]->id)}}">×</a></td>
                 </tr>
                 @endforeach
@@ -63,14 +63,7 @@
             <input type="submit" value="Update Cart" />
             <a href="shop">Continue Shopping</a>
           </div>
-          <div class="cart-coupon mb-40">
-            <h4>Coupon</h4>
-            <p>Enter your coupon code if you have one.</p>
-            <div class="coupon_form_inner">
-              <input type="text" placeholder="Coupon code" />
-              <input type="submit" value="Apply Coupon" />
-            </div>
-          </div>
+
         </div>
         <div class="col-md-4 col-12">
           <div class="cart-total mb-40">
@@ -78,14 +71,10 @@
             <div class="table-responsive">
               <table>
                 <tbody>
-                  <tr class="cart-subtotal">
-                    <th>Subtotal</th>
-                    <td><span class="amount">$306.00</span></td>
-                  </tr>
                   <tr class="order-total">
                     <th>Total</th>
                     <td>
-                      <strong><span class="amount">${{$total}}</span></strong>
+                      <strong><span class="amount">{{$total}} JOD</span></strong>
                     </td>
                   </tr>
                 </tbody>
@@ -93,7 +82,7 @@
             </div>
 
             <div class="proceed-to-checkout section mt-30">
-              <a href="checkout">Proceed to Checkout</a>
+              <a href="checkout" style="background-color: #f6563c;">Proceed to Checkout</a>
             </div>
           </div>
         </div>
