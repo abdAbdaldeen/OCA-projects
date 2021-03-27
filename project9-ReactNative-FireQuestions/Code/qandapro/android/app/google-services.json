@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "340296262974",
+    "project_id": "qanda-656c7",
+    "storage_bucket": "qanda-656c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:340296262974:android:677e7822e07312d6e2f86f",
+        "android_client_info": {
+          "package_name": "com.qandapro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "340296262974-09pg134nt8a6frqau2noavobuj1nh46o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4ynQJc10QQTUEyKn4rDWoYJxHxndGhUQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "340296262974-09pg134nt8a6frqau2noavobuj1nh46o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
